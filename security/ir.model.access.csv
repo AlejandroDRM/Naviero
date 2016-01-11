@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_naviero_buque,buque,model_buque,,1,1,1,1
+access_naviero_contenedor,contenedor,model_contenedor,,1,1,1,1
+access_naviero_ruta,ruta,model_ruta,,1,1,1,1
+access_naviero_linea,linea,model_linea,,1,1,1,1
+access_naviero_puerto,puerto,model_puerto,,1,1,1,1
+access_naviero_viaje,viaje,model_viaje,,1,1,1,1
+access_naviero_servicio,servicio,model_servicio,,1,1,1,1
+access_naviero_tipo_contenedor,contenedor.tipo,model_contenedor_tipo,,1,1,1,1
+access_naviero_movimientos,contenedor.movimiento,model_contenedor_movimiento,,1,1,1,1
+access_naviero_bls,bl,model_bl,,1,1,1,1
+access_naviero_patio,patio,model_patio,,1,1,1,1
+access_naviero_beneficiario,beneficiario,model_beneficiario,,1,1,1,1

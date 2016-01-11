@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Vista formulario -->
+		<record id='view_gasto_form' model='ir.ui.view'>
+			<field name='name'>view.gasto.form</field>
+			<field name='model'>gasto</field>
+			<field name='arch' type='xml'>
+				<form string='Gasto' version='7.0'>
+					<sheet>
+						<group col="4">
+							<group>
+								<field name='codigo' />
+								<field name='descripcion' />
+								<field name='valor' />
+							</group>
+							<group>
+								<field name='tipo' />
+								<field name='cuenta_contable' />
+								<field name='eliminado' groups="naviero.group_naviero_admin"/>									
+							</group>
+						</group>
+						<group col="3" colspan="1" >
+							<button name="eliminar_gasto" type="object" string="Eliminar" groups="naviero.group_naviero_admin"/>							
+						</group>						
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- Vista de arbol -->
+		<record id='view_gasto_tree' model='ir.ui.view'>
+			<field name='name'>view.gasto.tree</field>
+			<field name='model'>gasto</field>
+			<field name='arch' type='xml'>
+				<tree string='Gasto' version='7.0' > <!--colors='#FF0000:full_view==False'> -->
+					<field name='codigo' />
+					<field name='descripcion' />
+					<field name='valor' />
+					<field name='tipo' />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Busqueda -->
+		<record id='view_gasto_search' model='ir.ui.view'>
+			<field name='name'>view.gasto.search</field>
+			<field name='model'>gasto</field>
+			<field name='arch' type='xml'>
+				<search string='Búsqueda Gasto' version='7.0'>
+					<field name='codigo' />				
+					<field name='descripcion' />
+					<field name='valor' />
+					<field name='tipo' />
+				</search>
+			</field>
+		</record>
+	
+		<!-- Ejemplo de accion de menu -->
+		<record id='action_gasto' model='ir.actions.act_window'>
+            <field name="name">Gastos</field>
+            <field name="res_model">gasto</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			 <field name="domain">[('eliminado','=',False)]</field>			
+            <!-- <field name="search_view_id" ref="view_media_search"/> -->
+		</record>
+
+		<!-- Accion de menu Administrador-->
+		<record id='action_gasto_administrador' model='ir.actions.act_window'>
+            <field name="name">Gastos Administrador</field>
+            <field name="res_model">gasto</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+		</record>			
+	</data>
+</openerp>

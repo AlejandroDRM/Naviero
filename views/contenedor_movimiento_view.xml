@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Vista formulario -->
+		<record id='view_contenedor_tipo_form' model='ir.ui.view'>
+			<field name='name'>view.contenedor.movimiento.form</field>
+			<field name='model'>contenedor.movimiento</field>
+			<field name='arch' type='xml'>
+				<form string='Movimiento Contenedor' version='7.0'>
+					<sheet>
+						<group col="4">
+							<group>
+								<field name='contenedor_id_aux'/>				
+								<field name='buque_llegada'/>				
+								<field name='movimiento'/>
+								<field name='fecha'/>
+								<field name='hora'/>
+								<field name='puerto'/>
+								<field name='patio'/>
+							</group>
+							<group>
+								<field name='bl_id_aux'/>				
+								<field name='viaje_llegada'/>
+								<field name='eir'/>					
+								<field name='buque'/>										
+								<field name='viaje'/>															
+								<field name='operativo'/>					
+								<field name='usuario'/>
+								<field name='observaciones'/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- Ejemplo de vista arbol -->
+		<record id='view_contenedor_tipo_tree' model='ir.ui.view'>
+			<field name='name'>view.contenedor.movimiento.tree</field>
+			<field name='model'>contenedor.movimiento</field>
+			<field name='arch' type='xml'>
+				<tree string='Movimiento Contenedor' editable="botton">
+					<field name='contenedor_id_aux'/>				
+					<field name='bl_id_aux'/>
+					<field name='movimiento'/>
+					<field name='fecha'/>
+					<field name='hora'/>
+					<field name='puerto'/>
+					<field name='patio'/>
+					<field name='eir'/>
+					<field name='buque'/>
+					<field name='viaje'/>
+					<field name='booking'/>
+					<field name='operativo'/>
+					<field name='observaciones'/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- Busqueda -->
+ 		<record id='view_contenedor_tipo_search' model='ir.ui.view'>
+			<field name='name'>view.contenedor.movimiento.search</field>
+			<field name='model'>contenedor.movimiento</field>
+			<field name='arch' type='xml'>
+				<search string='Búsqueda Movimiento Contenedor' version='7.0'>
+					<field name='movimiento' />
+					<field name='contenedor_id_aux' />
+					<field name='bl_id_aux' />
+					<field name='fecha' />
+					<field name='hora' />
+					<field name='usuario'/>
+					<field name='buque_llegada'/>
+					<field name='viaje_llegada'/>
+					<field name='fecha_desde' filter_domain="[('fecha_desde','&gt;=',self)]"/>
+					<field name='fecha_hasta' filter_domain="[('fecha_hasta','&lt;=',self)]"/>
+				</search>
+			</field>
+		</record>
+		
+		
+		<!-- Accion de menu movimientos contenedores -->
+		<record id='action_contenedor_movimientos' model='ir.actions.act_window'>
+            <field name="name">Movimientos Del Día</field>
+            <field name="res_model">contenedor.movimiento</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('fecha','=',(context_today()+datetime.timedelta(days=0)).strftime('%Y-%m-%d'))]</field>
+		</record>	
+
+				<!-- Accion de menu Administrador-->
+		<record id='action_contenedor_movimientos_historico' model='ir.actions.act_window'>
+            <field name="name">Histórico De Movimientos</field>
+            <field name="res_model">contenedor.movimiento</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+		</record>
+		
+		<!-- Menu -->
+		<menuitem name="Movimientos" id="menu_movimientos_sub" sequence="1" parent="menu_naviero_main" />		
+		<menuitem id="menu_contenedor_movimientos" sequence="1"
+			  parent="menu_movimientos_sub" action="action_contenedor_movimientos" groups="naviero.group_naviero_admin,naviero.group_naviero_control_equipos,naviero.group_naviero_dpto_EIR_control"/>
+		<menuitem id="menu_contenedor_movimientos_historico" sequence="1"
+			  parent="menu_movimientos_sub" action="action_contenedor_movimientos_historico" groups="naviero.group_naviero_admin,naviero.group_naviero_control_equipos,naviero.group_naviero_dpto_EIR_control"/>			  
+	
+	</data>
+</openerp>

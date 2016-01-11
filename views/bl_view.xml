@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Vista formulario -->
+		<record id='view_bl_form' model='ir.ui.view'>
+			<field name='name'>view.bl.form</field>
+			<field name='model'>bl</field>
+			<field name="groups_id" eval="[(6, 0, [ref('group_naviero_dpto_finanzas') ])]"/>			
+			<field name='arch' type='xml'>
+				<form string='bl' version='7.0'>
+					<sheet>
+						<group col="4">
+							<group>
+								<field name='no_bl' />
+								<field name='viaje_id' />
+								<field name='buque' />
+								<field name='puerto_embarque' />
+								<field name='cantidad_contenedores' />								
+								<field name='unidad_paquetes' />
+								<field name='cantidad_paquetes' />							
+								<field name='peso_bruto' />										
+								<field name='registro_sidunea' />										
+								<field name='impreso_venezuela' />
+								</group>
+							<group>
+								<field name='dias_libres' />									
+								<field name='customers' />	
+								<field name='cliente' />								
+								<field name='puerto_llegada' />
+								<field name='tipo' />															
+								<field name='naturaleza' />		
+								<field name='descripcion_carga' />			
+								<field name='carga_peligrosa' />										
+								<field name='exonerado'/>								
+								<field name='eliminado' groups="naviero.group_naviero_admin"/>									
+							</group>
+						</group>
+						<group col="3" colspan="1" groups="naviero.group_naviero_dpto_documentacion">
+							<button name="eliminar_bl" type="object" string="Eliminar" />							
+						</group>	
+						<notebook>
+							<page string="Contenedores" >
+								<field name="contenedores_id" />					
+							</page>						
+						</notebook>						
+					</sheet>
+				    <div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+						<field name="message_ids" widget="mail_thread"/>
+					</div>					
+				</form>
+			</field>
+		</record>
+
+		<!-- Ejemplo de vista arbol -->
+		<record id='view_bl_tree' model='ir.ui.view'>
+			<field name='name'>view.bl.tree</field>
+			<field name='model'>bl</field>
+			<field name='arch' type='xml'>
+				<tree string='bl' colors="blue:exonerado == True" > 
+					<field name='no_bl' />
+					<field name='buque' />															
+					<field name='viaje_id' />							
+					<field name='cantidad_contenedores' />								
+					<field name='unidad_paquetes' />
+					<field name='cantidad_paquetes' />							
+					<field name='peso_bruto' />	
+					<field name='customers' />
+					<field name='dias_libres' />					
+					<field name='exonerado' invisible="1"/>													
+				</tree>
+			</field>
+		</record>
+
+		<!-- Busqueda -->
+		<record id='view_bl_search' model='ir.ui.view'>
+			<field name='name'>view.bl.search</field>
+			<field name='model'>bl</field>
+			<field name='arch' type='xml'>
+				<search string='Búsqueda bl' version='7.0'>
+					<field name='no_bl' />
+					<field name='cantidad_contenedores'/>								
+					<field name='unidad_paquetes' />
+					<field name='cantidad_paquetes' />							
+					<field name='peso_bruto' />	
+					<field name='customers' />			
+					<field name='viaje_id' />
+					<field name='buque' />
+					<field name='puerto_embarque' />
+					<field name='registro_sidunea' />										
+ 					<group expand="1" string="Filtros">
+						<filter name='exonerados' string='Exonerados' domain="[('exonerado','=','True')]" />
+						<filter name='no_exonerados' string='No Exonerados' domain="[('exonerado','=','False')]" />
+					</group> 					
+				</search>
+			</field>
+		</record>
+		
+		<!-- Accion de menu -->
+		<record id='action_bl' model='ir.actions.act_window'>
+            <field name="name">BLS</field>
+            <field name="res_model">bl</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('eliminado','=',False)]</field>
+		</record>
+		
+		<!-- Accion de menu administrador -->
+		<record id='action_bl_administrador' model='ir.actions.act_window'>
+            <field name="name">BLS Administrador</field>
+            <field name="res_model">bl</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <!-- <field name="search_view_id" ref="view_media_search"/> -->
+		</record>		
+		
+		<!-- Accion de menu puerto cabello -->
+		<record id='action_bl_puerto_cabello' model='ir.actions.act_window'>
+            <field name="name">Puerto Cabello</field>
+            <field name="res_model">bl</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('viaje_id.puerto_arribo.codigo','=','VEPBL')]</field>
+            <!-- <field name="search_view_id" ref="view_media_search"/> -->
+		</record>				
+		
+		<!-- Accion de menu la guaira -->
+		<record id='action_bl_la_guaira' model='ir.actions.act_window'>
+            <field name="name">La Guaira</field>
+            <field name="res_model">bl</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('viaje_id.puerto_arribo.codigo','=','VELAG')]</field>
+            <!-- <field name="search_view_id" ref="view_media_search"/> -->
+		</record>						
+
+		<!-- Creacion de menus -->
+		<menuitem name="BLS" id="menu_bl_sub" sequence="1" parent="menu_naviero_main" />
+			<menuitem id="menu_bl" sequence="1"
+					  parent="menu_bl_sub" action="action_bl" groups="naviero.group_naviero_user" />
+			<menuitem id="menu_bl_administrador" sequence="1"
+					  parent="menu_bl_sub" action="action_bl_administrador"  groups="naviero.group_naviero_admin"/>					  
+			<menuitem id="menu_bl_la_guaira" sequence="1"
+					  parent="menu_bl_sub" action="action_bl_la_guaira" groups="naviero.group_naviero_user" />					  
+			<menuitem id="menu_bl_puerto_cabello" sequence="1"
+					  parent="menu_bl_sub" action="action_bl_puerto_cabello" groups="naviero.group_naviero_user" />					  
+	</data>
+</openerp>

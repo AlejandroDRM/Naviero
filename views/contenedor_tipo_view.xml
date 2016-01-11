@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Vista formulario -->
+		<record id='view_contenedor_tipo_form2' model='ir.ui.view'>
+			<field name='name'>view.contenedor.tipo.form</field>
+			<field name='model'>contenedor.tipo</field>
+			<field name='arch' type='xml'>
+				<form string='Tipo Contenedor' version='7.0'>
+					<sheet>
+						<group col="4">
+							<group>
+								<field name='codigo'/>
+								<field name='descripcion'/>
+								<field name='tarifa_demora'/>
+								<field name='eliminado' groups="naviero.group_naviero_admin"/>									
+							</group>
+						</group>
+						<group col="3" colspan="1" groups="naviero.group_naviero_dpto_documentacion">
+							<button name="eliminar_tipo_contenedor" type="object" string="Eliminar"/>							
+						</group>						
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- Ejemplo de vista arbol -->
+		<record id='view_contenedor_tipo_tree2' model='ir.ui.view'>
+			<field name='name'>view.contenedor.tipo.tree</field>
+			<field name='model'>contenedor.tipo</field>
+			<field name='arch' type='xml'>
+				<tree string='Tipo Contenedor' version='7.0' > 
+					<field name='codigo' />
+					<field name='descripcion' />
+					<field name='tarifa_demora'/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- Busqueda -->
+		<record id='view_contenedor_tipo_search2' model='ir.ui.view'>
+			<field name='name'>view.contenedor.tipo.search</field>
+			<field name='model'>contenedor.tipo</field>
+			<field name='arch' type='xml'>
+				<search string='Búsqueda Tipo Contenedor' version='7.0'>
+					<field name='codigo' />
+					<field name='descripcion' />
+				</search>
+			</field>
+		</record>		
+		
+		<!-- Ejemplo de accion de menu -->
+		<record id='action_menu_contenedor_tipo2' model='ir.actions.act_window'>
+            <field name="name">Tipos De Contenedor</field>
+            <field name="res_model">contenedor.tipo</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			 <field name="domain">[('eliminado','=',False)]</field>			
+		</record>
+		
+		<!-- Ejemplo de accion de menu administrador-->
+		<record id='action_menu_contenedor_tipo_administrador2' model='ir.actions.act_window'>
+            <field name="name">Tipos De Contenedor Administrador</field>
+            <field name="res_model">contenedor.tipo</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+		</record>		
+
+		<!-- Ejemplo de creacion de menus -->
+			<menuitem id="menu_contenedor_tipo2" sequence="1" groups="naviero.group_naviero_dpto_documentacion"
+			  parent="menu_contenedor_sub" action="action_menu_contenedor_tipo2" />
+			<menuitem id="menu_contenedor_tipo_administrador2" sequence="1" groups="naviero.group_naviero_admin"
+			  parent="menu_contenedor_sub" action="action_menu_contenedor_tipo_administrador2" />			  
+	</data>
+</openerp>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <!-- Accion de menu -->
+    <record id='action_beneficiario' model='ir.actions.act_window'>
+        <field name="name">Clientes</field>
+        <field name="res_model">beneficiario</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+              <p class="oe_view_nocontent_create">Clientes
+              </p>
+        </field>    </record>
+    <!-- Creacion de menus -->
+    <menuitem name="Clientes"
+              id="menu_beneficiario_sub"
+              sequence="1"
+              parent="menu_naviero_main"
+              groups="naviero.group_naviero_dpto_finanzas"/>
+    <menuitem id="menu_beneficiario" sequence="1"
+              parent="menu_beneficiario_sub"
+              action="action_beneficiario"
+              groups="naviero.group_naviero_dpto_finanzas"/>
+    </data>
+</openerp>

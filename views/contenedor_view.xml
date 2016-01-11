@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Vista formulario -->
+		<record id='view_contenedor_form' model='ir.ui.view'>
+			<field name='name'>view.contenedor.form</field>
+			<field name='model'>contenedor</field>
+			<field name='arch' type='xml'>
+				<form string='Contenedor' version='7.0'>
+					<sheet>
+						<group col="4">
+							<group>
+								<field name="numero" class="oe_inline"/>							
+								<field name='tipo' />
+								<field name='buque' />								
+								<field name="viaje_id"/>								
+								<field name='fecha_llegada'/>
+								<field name='fecha_inicio_operaciones'/>
+								<field name='customers'/>				
+								<field name='cliente' />								
+								<field name='peso' />																
+								<field name='no_precinto'/>
+								<field name='no_precinto2'/>
+								<field name='no_precinto3'/>
+								<!-- <field name='eir' />	-->
+								<field name='observaciones' />
+								<field name='state'/>	
+								<field name='operativo'/>								
+								<field name='exonerado'/>								
+							</group>
+							<group>
+								<field name='no_bl' />							
+								<field name='dias_libres'/>
+								<field name='puerto_llegada'/>
+								<field name='fecha_entrega' />								
+								<field name='fecha_vencen_dias_libres' />							
+								<field name='fecha_devolucion'/>									
+								<field name='fecha_salida'/>									
+								<field name='puerto_actual'/>	
+								<field name='patio' />		
+								<field name='no_booking' />		
+								<field name='buque_salida'/>	
+								<field name='viaje_salida' />		
+								<field name='eliminado' groups="naviero.group_naviero_admin"/>									
+								<field name='demora' />								
+								<field name='dias_demora' />								
+							</group>
+						</group>
+ 						<notebook>
+							<page string="Movimientos">
+								<field name="movimiento_contenedor_id" />
+							</page>
+						</notebook>						
+					</sheet>
+				    <div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+						<field name="message_ids" widget="mail_thread"/>
+					</div>
+				</form>
+			</field>
+		</record>
+
+        <!-- Cron job para movimiento de contenedores a demora -->
+		<record forcecreate="True" id="ir_cron_contenedor_demora" model="ir.cron">
+            <field name="name">Contenedor Demora</field>
+            <field eval="True" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">12</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall" />
+            <field eval="'contenedor'" name="model" />
+            <field eval="'equipo_demora'" name="function" />
+			<field name="priority">0</field>
+            <field eval="'()'" name="args" />
+        </record>
+		
+		<!-- Vista arbol -->
+		<record id='view_contenedor_tree' model='ir.ui.view'>
+			<field name='name'>view.contenedor.tree</field>
+			<field name='model'>contenedor</field>
+			<field name='arch' type='xml'>
+				<tree string='Contenedor' colors="red:operativo == False" editable="botton"> 
+					<field name='numero' />
+					<field name='no_bl' />
+					<field name='buque' />
+					<field name='viaje_id' />						
+					<field name='puerto_llegada'/>					
+					<field name='tipo' />
+					<field name='fecha_llegada' />
+					<field name='fecha_entrega' />
+					<field name='fecha_devolucion'/>					
+					<field name='puerto_actual'/>
+					<field name='patio'/>					
+					<field name='eir' />					
+					<!-- <field name='state'  invisible="1" />	 -->
+					<!-- <field name='entrada_salida' />								 -->
+					<field name='state' />							
+					<field name='operativo' invisible="1"/>													
+					<field name='customers' />
+				</tree>
+				
+			</field>
+		</record>
+		<!-- Vista Kanban-->
+		<record model="ir.ui.view" id="view_contenedor_kanban">
+            <field name="name">view.contenedor.kanban</field>
+            <field name="model">contenedor</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--list of field to be loaded -->
+                    <field name="no_bl" />
+                    <field name="image" />
+                    <templates>
+						<t t-name="kanban-box">
+                            <div class="oe_kanban_vignette">
+                                <a type="open">
+                                    <img class="oe_kanban_image"
+                                        t-att-src="kanban_image('contenedor', 'image', record.id.value)" />
+                                </a>
+                                <div class="oe_kanban_details">
+                                    <h4>
+                                        <a type="edit">No: </a> <field name="numero"></field>                                      
+                                    </h4>
+                                    <h4>
+                                        <a type="edit">BL: </a> <field name="no_bl"></field>
+                                    </h4>		
+                                    <h4>
+                                        <a type="edit">Estado: </a> <field name="state"></field>
+                                    </h4>		
+                                    <h4>
+                                        <a type="edit">Fecha límite retorno: </a> <field name="fecha_vencen_dias_libres"></field>
+                                    </h4>										
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+		
+		<!-- Busqueda -->
+		<record id='view_contenedor_search' model='ir.ui.view'>
+			<field name='name'>view.contenedor.search</field>
+			<field name='model'>contenedor</field>
+			<field name='arch' type='xml'>
+				<search string='Búsqueda Contenedor' version='7.0'>
+					<field name='numero' />				
+					<field name='tipo' />
+					<field name='no_bl' />
+					<field name='no_booking' />							
+					<field name='buque' />								
+					<field name="viaje_id"/>			
+					<field name='customers' />									
+					<field name='state' />			
+					<field name='puerto_actual'/>					
+					<field name='puerto_llegada'/>					
+					<field name='llegada_desde' filter_domain="[('llegada_desde','&gt;=',self)]"/>
+					<field name='llegada_hasta' filter_domain="[('llegada_hasta','&lt;=',self)]"/>					 
+					<field name='entrega_desde' filter_domain="[('entrega_desde','&gt;=',self)]"/>
+					<field name='entrega_hasta' filter_domain="[('entrega_hasta','&lt;=',self)]"/>
+					<field name='salida_desde' filter_domain="[('salida_desde','&gt;=',self)]"/>
+					<field name='salida_hasta' filter_domain="[('salida_hasta','&lt;=',self)]"/>
+					<field name='devolucion_desde' filter_domain="[('devolucion_desde','&gt;=',self)]"/>
+					<field name='devolucion_hasta' filter_domain="[('devolucion_hasta','&lt;=',self)]"/>					
+ 					<group expand="1" string="Filtros">
+						<filter name='full_almacen' string='Full en almacén' domain="[('state','=','en_puerto')]" />
+						<filter name='en_consignatario' string='Entregado al consignatario' domain="[('state','=','despachado')]" />
+						<filter name='recibido_vacio' string='Recibido vacío' domain="[('state','=','devuelto')]" />
+						<filter name='embarcado_vacio' string='Embarcado vacío' domain="[('state','=','embarcado_vacio')]" />
+						<filter name='engregados_exportacion' string='Entregados vacíos a exportación' domain="[('state','=','vacio_exportacion')]" />
+						<filter name='recibidos_full_exportacion' string='Entregados full a exportación' domain="[('state','=','full_exportacion')]" />
+						<filter name='embarcado_full' string='Embarcados full' domain="[('state','=','embarcado_full')]" />
+						<filter name='en_demora' string='En demora' domain="[('demora','=','True')]" />
+						<!-- <filter name='tracking' string='Tracking' domain="[(')]" /> -->
+					</group> 					
+ 					<group expand="1" string="Agrupar por">
+						<filter name='group_by_estado' string='Estado' context="{'group_by':'state'}" />
+						<filter name='group_by_cliente' string='Cliente' context="{'group_by':'customers'}" />						
+					</group> 
+				</search>
+			</field>
+		</record>
+		
+		<!-- Accion de menu tracking -->
+		<record id='action_contenedor_tracking' model='ir.actions.act_window'>
+            <field name="name">Tracking</field>
+            <field name="res_model">contenedor</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('eliminado','=',False)]</field>
+		</record>
+		
+		<!-- Accion de menu inventario actual-->
+		<record id='action_contenedor_inventario_actual' model='ir.actions.act_window'>
+            <field name="name">Inventario Actual</field>
+            <field name="res_model">contenedor</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('state','!=','embarcado_vacio'),('state','!=','embarcado_full'),
+								  ('state','!=','entregado_shiperon'),('state','!=','embarcado_shiperon')]</field>
+		</record>		
+		<!-- Accion de menu PBL -->
+		<record id='action_contenedor_puerto_cabello' model='ir.actions.act_window'>
+            <field name="name">Puerto Cabello</field>
+            <field name="res_model">contenedor</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('state','!=','embarcado_vacio'),('state','!=','embarcado_full'),
+								  ('state','!=','entregado_shiperon'),('state','!=','embarcado_shiperon'),
+								  ('puerto_llegada.codigo','=','VEPBL')]</field>
+			<!-- <field name="context">{"search_default_tracking":1}</field> -->
+		</record>
+		
+		<!-- Accion de menu tracking -->
+		<record id='action_contenedor_la_guaira' model='ir.actions.act_window'>
+            <field name="name">La Guaira</field>
+            <field name="res_model">contenedor</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('state','!=','embarcado_vacio'),('state','!=','embarcado_full'),
+								  ('state','!=','entregado_shiperon'),('state','!=','embarcado_shiperon'),
+								  ('puerto_llegada.codigo','=','VELAG')]</field>		
+		</record>								  
+		<!-- Menu -->
+		<menuitem name="Contenedor" id="menu_contenedor_sub" sequence="1" parent="menu_naviero_main" />
+			<menuitem id="menu_contenedor_tracking" sequence="1"
+					  parent="menu_contenedor_sub" action="action_contenedor_tracking" groups="naviero.group_naviero_user"/>
+			<menuitem id="menu_contenedor_inventario_actual" sequence="1"
+					  parent="menu_contenedor_sub" action="action_contenedor_inventario_actual" groups="naviero.group_naviero_control_equipos" />					  
+			<menuitem id="menu_contenedor_la_guaira" sequence="1"
+					  parent="menu_contenedor_sub" action="action_contenedor_la_guaira" groups="naviero.group_naviero_user" />					  
+			<menuitem id="menu_contenedor_puerto_cabello" sequence="1"
+					  parent="menu_contenedor_sub" action="action_contenedor_puerto_cabello" groups="naviero.group_naviero_user" />						  
+	</data>
+</openerp>

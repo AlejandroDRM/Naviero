@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Vista formulario -->
+		<record id='view_puerto_capitania_form' model='ir.ui.view'>
+			<field name='name'>view.puerto.capitania.form</field>
+			<field name='model'>puerto.capitania</field>
+			<field name='arch' type='xml'>
+				<form string='Capitanía De Puerto' version='7.0'>
+					<sheet>
+						<group col="4">
+							<group>
+								<field name='codigo'/>
+								<field name='descripcion'/>
+								<field name='eliminado' groups="naviero.group_naviero_admin"/>								
+							</group>
+						</group>
+						<group col="3" colspan="1" >
+							<button name="eliminar_puerto_capitania" type="object" string="Eliminar" groups="naviero.group_naviero_admin"/>
+						</group>						
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- Vista arbol -->
+		<record id='view_puerto_capitania_tree' model='ir.ui.view'>
+			<field name='name'>view.puerto.capitania.tree</field>
+			<field name='model'>puerto.capitania</field>
+			<field name='arch' type='xml'>
+				<tree string='Capitanía De Puerto' version='7.0' > 
+					<field name='codigo' />
+					<field name='descripcion' />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Busqueda -->
+		<record id='view_puerto_capitania_search' model='ir.ui.view'>
+			<field name='name'>view.puerto.capitania.search</field>
+			<field name='model'>puerto.capitania</field>
+			<field name='arch' type='xml'>
+				<search string='Capitanía De Puerto' version='7.0'>
+					<field name='codigo' />
+					<field name='descripcion' />
+				</search>
+			</field>
+		</record>		
+		
+		<!-- Accion de menu -->
+		<record id='action_menu_puerto_capitania' model='ir.actions.act_window'>
+            <field name="name">Capitanías De Puerto</field>
+            <field name="res_model">puerto.capitania</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			 <field name="domain">[('eliminado','=',False)]</field>				
+		</record>
+		
+		<!-- Accion de menu administrador -->
+		<record id='action_menu_puerto_capitania_administrador' model='ir.actions.act_window'>
+            <field name="name">Capitanías De Puerto Administrador</field>
+            <field name="res_model">puerto.capitania</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+		</record>		
+
+		<!-- Menu -->
+			<menuitem id="menu_puerto_capitania" sequence="1" groups="naviero.group_naviero_dpto_documentacion"
+			  parent="menu_puerto_sub" action="action_menu_puerto_capitania" />
+			<menuitem id="menu_puerto_capitania_administrador" sequence="1" groups="naviero.group_naviero_admin"
+			  parent="menu_puerto_sub" action="action_menu_puerto_capitania_administrador" />			  
+	</data>
+</openerp>

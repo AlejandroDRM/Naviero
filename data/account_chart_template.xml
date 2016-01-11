@@ -1,0 +1,3636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data  noupdate="1">
+    <record model="account.account.template" id="account_global_account_0">
+      <field name="code">0</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">Global Shipping S.A.</field>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+    <record model="account.account.template" id="account_global_account_1">
+      <field name="code">1</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ACTIVO</field>
+      <field ref="account_global_account_0" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_2">
+      <field name="code">11</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ACTIVO CORRIENTE</field>
+      <field ref="account_global_account_1" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_3">
+      <field name="code">111</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">EFECTIVO  Y EQUIVALENTE DE  EFECTIVO</field>
+      <field ref="account_global_account_2" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_4">
+      <field name="code">11101</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CAJA CHICA</field>
+      <field ref="account_global_account_3" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_5">
+      <field name="code">11101001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CAJA CHICA ADMINISTRACION - CARACAS</field>
+      <field ref="account_global_account_4" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_6">
+      <field name="code">11101002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CAJA CHICA DIRECTORES - CARACAS</field>
+      <field ref="account_global_account_4" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_7">
+      <field name="code">11101003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CAJA CHICA SERVICIOS GENERALES - CARACAS</field>
+      <field ref="account_global_account_4" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_8">
+      <field name="code">11101004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CAJA CHICA ADMINISTRACION DE OPERACIONES - LAG</field>
+      <field ref="account_global_account_4" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_9">
+      <field name="code">11101005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CAJA CHICA ADMINISTRACION DE OPERACIONES - PCB</field>
+      <field ref="account_global_account_4" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_10">
+      <field name="code">11101006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CAJA CHICA ADMINISTRACION DE OPERACIONES - GUANTA</field>
+      <field ref="account_global_account_4" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_11">
+      <field name="code">11102</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BANCOS NACIONALES</field>
+      <field ref="account_global_account_3" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_12">
+      <field name="code">11102001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BANESCO   </field>
+      <field ref="account_global_account_11" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_13">
+      <field name="code">11102002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BANCARIBE  </field>
+      <field ref="account_global_account_11" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_14">
+      <field name="code">11102003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CORP BANCA  </field>
+      <field ref="account_global_account_11" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_15">
+      <field name="code">11102004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BANCO TESORO  </field>
+      <field ref="account_global_account_11" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_16">
+      <field name="code">11102005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BANCO ACTIVO  </field>
+      <field ref="account_global_account_11" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_17">
+      <field name="code">11102006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BNC                 </field>
+      <field ref="account_global_account_11" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_18">
+      <field name="code">11102007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BANCO DE VENEZUELA  </field>
+      <field ref="account_global_account_11" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_19">
+      <field name="code">11102008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTA OFICINA PRINCIPAL - PCB</field>
+      <field ref="account_global_account_11" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_20">
+      <field name="code">11102009</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTA OFICINA PRINCIPAL - LAG</field>
+      <field ref="account_global_account_11" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_21">
+      <field name="code">11102010</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTA OFICINA PRINCIPAL - GUANTA</field>
+      <field ref="account_global_account_11" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_22">
+      <field name="code">11102011</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTA OFICINA PRINCIPAL - CCS</field>
+      <field ref="account_global_account_11" name="parent_id"/>
+      <field name="type">liquidity</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_23">
+      <field name="code">112</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR COMERCIALES</field>
+      <field ref="account_global_account_2" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_24">
+      <field name="code">11201</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR CLIENTES</field>
+      <field ref="account_global_account_23" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_25">
+      <field name="code">11202</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PROVISION ESTIMACION DE CUENTAS DE COBRO DUDOSO</field>
+      <field ref="account_global_account_23" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_26">
+      <field name="code">113</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTRAS CUENTAS POR COBRAR Y ANTICIPOS</field>
+      <field ref="account_global_account_2" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_27">
+      <field name="code">11301</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTRAS CUENTAS POR COBRAR </field>
+      <field ref="account_global_account_26" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_28">
+      <field name="code">11301001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR  A  EMPLEADOS - PRESTAMOS</field>
+      <field ref="account_global_account_27" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_29">
+      <field name="code">11301002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR  A  EMPLEADOS - HCM</field>
+      <field ref="account_global_account_27" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_30">
+      <field name="code">11301003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR  - ANTICIPOS DE VIAJES</field>
+      <field ref="account_global_account_27" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_31">
+      <field name="code">11301004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CHEQUES DEVUELTOS POR COBRAR</field>
+      <field ref="account_global_account_27" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_32">
+      <field name="code">11301005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RECLAMOS  POR COBRAR A CIAS. DE SEGUROS</field>
+      <field ref="account_global_account_27" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_33">
+      <field name="code">11301006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RECLAMOS  POR COBRAR  BANCARIOS</field>
+      <field ref="account_global_account_27" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_34">
+      <field name="code">11301007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CTAS. POR COBRAR  - GTOS. REEMBOLSABLES- USO DE SUP.</field>
+      <field ref="account_global_account_27" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_35">
+      <field name="code">11302</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ANTICIPOS POR COBRAR</field>
+      <field ref="account_global_account_26" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_36">
+      <field name="code">11302001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ANTICIPOS A PROVEEDORES</field>
+      <field ref="account_global_account_35" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_37">
+      <field name="code">11303</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS PAGADOS POR ANTICIPADO</field>
+      <field ref="account_global_account_26" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_38">
+      <field name="code">11303001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SEGUROS DE HCM PAGADOS POR ANTICIPADO</field>
+      <field ref="account_global_account_37" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_39">
+      <field name="code">11303002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">FIANZAS PAGADAS POR ANTICIPADO</field>
+      <field ref="account_global_account_37" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_40">
+      <field name="code">11303003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SEGUROS DE VEHICULOS  PAGADOS POR ANTICIPADO</field>
+      <field ref="account_global_account_37" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_41">
+      <field name="code">11303004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SEGUROS DE MAQUINARIAS  PAGADOS POR ANTICIPADO</field>
+      <field ref="account_global_account_37" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_42">
+      <field name="code">11303005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SEGUROS DE RESPONSABILIDAD CIVIL  PAG. POR ANTICIPADO</field>
+      <field ref="account_global_account_37" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_43">
+      <field name="code">11304</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">TRIBUTOS FISCALES  PRE PAGADOS</field>
+      <field ref="account_global_account_26" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_44">
+      <field name="code">11304001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CREDITOS FISCALES - IVA COMPRAS</field>
+      <field ref="account_global_account_43" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_45">
+      <field name="code">11304002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RETENCIONES  IVA</field>
+      <field ref="account_global_account_43" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_46">
+      <field name="code">11304003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">EXCEDENTES DE CREDITOS FISCALES - IVA</field>
+      <field ref="account_global_account_43" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_47">
+      <field name="code">11304004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RETENCIONES DEL ISLR</field>
+      <field ref="account_global_account_43" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_48">
+      <field name="code">11304005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ESTIMADA DEL  ISLR</field>
+      <field ref="account_global_account_43" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_49">
+      <field name="code">11304006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">IMPUESTOS MUNICIPALES</field>
+      <field ref="account_global_account_43" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_50">
+      <field name="code">114</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INVERSIONES</field>
+      <field ref="account_global_account_2" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_51">
+      <field name="code">11401</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INVERSIONES EN TITULOS VALORES</field>
+      <field ref="account_global_account_50" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_52">
+      <field name="code">11401001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INVERSIONES TEMPORALES</field>
+      <field ref="account_global_account_51" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_53">
+      <field name="code">11401002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INVERSIONES EN PAPELES COMERCIALES</field>
+      <field ref="account_global_account_51" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_54">
+      <field name="code">12</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ACTIVO NO  CORRIENTE</field>
+      <field ref="account_global_account_1" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_55">
+      <field name="code">121</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR A  LARGO PLAZO</field>
+      <field ref="account_global_account_54" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_56">
+      <field name="code">12101</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTRAS CUENTAS POR COBRAR A LARGO PLAZO</field>
+      <field ref="account_global_account_55" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_57">
+      <field name="code">12101001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR  A  ACCIONISTAS</field>
+      <field ref="account_global_account_56" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_58">
+      <field name="code">12102</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR A CIAS. RELACIONADAS</field>
+      <field ref="account_global_account_55" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_59">
+      <field name="code">12102001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR VENALCA</field>
+      <field ref="account_global_account_58" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_60">
+      <field name="code">12102002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR PRIME LOGIST</field>
+      <field ref="account_global_account_58" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_61">
+      <field name="code">12102003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR GLOBAL SHIPPING LOGISTIES</field>
+      <field ref="account_global_account_58" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_62">
+      <field name="code">12102004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR CHINA OCEAN DE VENEZUELA</field>
+      <field ref="account_global_account_58" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_63">
+      <field name="code">12102005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">EIR CONTROL</field>
+      <field ref="account_global_account_58" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_64">
+      <field name="code">12102006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR SERVICIOS PORTUARIOS CENTAURO</field>
+      <field ref="account_global_account_58" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_65">
+      <field name="code">12102007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR MARITIMA LA RESTINGA</field>
+      <field ref="account_global_account_58" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_66">
+      <field name="code">12102008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR VENESTIBA</field>
+      <field ref="account_global_account_58" name="parent_id"/>
+      <field name="type">receivable</field>
+      <field ref="account_type_receivable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_67">
+      <field name="code">122</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PROPIEDADES PLANTAS Y EQUIPOS</field>
+      <field ref="account_global_account_54" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_68">
+      <field name="code">12201</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INMUEBLES</field>
+      <field ref="account_global_account_67" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_69">
+      <field name="code">12201001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INMUEBLES</field>
+      <field ref="account_global_account_68" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_70">
+      <field name="code">12201002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DEPRECIACION ACUMULADA INMUEBLES</field>
+      <field ref="account_global_account_68" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_71">
+      <field name="code">12202</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MAQUINARIAS Y HERRAMIENTAS</field>
+      <field ref="account_global_account_67" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_72">
+      <field name="code">12202001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MAQUINARIAS Y HERRAMIENTAS</field>
+      <field ref="account_global_account_71" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_73">
+      <field name="code">12202002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DEPRECIACION ACUMULADA MAQUINARIAS  Y HERRAMIENTAS</field>
+      <field ref="account_global_account_72" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_74">
+      <field name="code">12203</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">EQUIPOS DE TRANSPORTE</field>
+      <field ref="account_global_account_67" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_75">
+      <field name="code">12203001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">EQUIPOS DE TRANSPORTE</field>
+      <field ref="account_global_account_74" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_76">
+      <field name="code">12203002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DEPRECIACION ACUMULADA EQUIPOS DE TRANSPORTE</field>
+      <field ref="account_global_account_74" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_77">
+      <field name="code">12204</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MOBILIARIO Y EQUIPOS DE OFICINAS</field>
+      <field ref="account_global_account_67" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_78">
+      <field name="code">12204001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MOBILIARIO Y EQUIPOS DE OFICINAS</field>
+      <field ref="account_global_account_77" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_79">
+      <field name="code">12204002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DEPRECIACION ACUMULADA MOBILIARIO Y EQUIPOS DE OFICINAS</field>
+      <field ref="account_global_account_77" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_80">
+      <field name="code">12205</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">EQUIPOS Y SISTEMAS DE COMPUTACION </field>
+      <field ref="account_global_account_67" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_81">
+      <field name="code">12205001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">EQUIPOS Y SISTEMAS DE COMPUTACION </field>
+      <field ref="account_global_account_80" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_82">
+      <field name="code">12205002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DEPRECIACION ACUMULADA EQ. Y SISTEMAS DE COMPUTACION </field>
+      <field ref="account_global_account_81" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_83">
+      <field name="code">123</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS ACTIVOS</field>
+      <field ref="account_global_account_54" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_84">
+      <field name="code">12301</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DEPOSITOS EN GARANTIA</field>
+      <field ref="account_global_account_83" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_85">
+      <field name="code">12301001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DEPOSITOS EN GARANTIA POR ALQUILER DE OFICINAS</field>
+      <field ref="account_global_account_84" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_86">
+      <field name="code">124</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ACTIVOS DIFERIDOS</field>
+      <field ref="account_global_account_54" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_87">
+      <field name="code">12401</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE CONSTITUCION DE PROYECTOS</field>
+      <field ref="account_global_account_86" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_88">
+      <field name="code">12401001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PROYECTO  OCAMAR</field>
+      <field ref="account_global_account_87" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_89">
+      <field name="code">12401002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">REMODELACION  OFICINAS  ATRIUM</field>
+      <field ref="account_global_account_87" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_asset" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_90">
+      <field name="code">2</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PASIVO</field>
+      <field ref="account_global_account_0" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_91">
+      <field name="code">21</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PASIVO CORRIENTE</field>
+      <field ref="account_global_account_90" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_92">
+      <field name="code">211</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PASIVOS  FINANCIEROS</field>
+      <field ref="account_global_account_91" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_93">
+      <field name="code">21101</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">EFECTOS POR PAGAR BANCARIOS - C.P.</field>
+      <field ref="account_global_account_92" name="parent_id"/>
+      <field name="type">payable</field>
+      <field ref="account_type_payable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_94">
+      <field name="code">21101001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BANESCO</field>
+      <field ref="account_global_account_93" name="parent_id"/>
+      <field name="type">payable</field>
+      <field ref="account_type_payable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_95">
+      <field name="code">21101002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BANCO ACTIVO</field>
+      <field ref="account_global_account_93" name="parent_id"/>
+      <field name="type">payable</field>
+      <field ref="account_type_payable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_96">
+      <field name="code">212</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS Y DOCUMENTOS POR PAGAR</field>
+      <field ref="account_global_account_91" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_97">
+      <field name="code">21201</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COMERCIALES</field>
+      <field ref="account_global_account_96" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_98">
+      <field name="code">21201001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PROVEEDORES</field>
+      <field ref="account_global_account_97" name="parent_id"/>
+      <field name="type">payable</field>
+      <field ref="account_type_payable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_99">
+      <field name="code">21201002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">TERCEROS</field>
+      <field ref="account_global_account_97" name="parent_id"/>
+      <field name="type">payable</field>
+      <field ref="account_type_payable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_100">
+      <field name="code">21201003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">LINEA - PORCION C.P.</field>
+      <field ref="account_global_account_97" name="parent_id"/>
+      <field name="type">payable</field>
+      <field ref="account_type_payable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_101">
+      <field name="code">21201004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RETENCIONES POR FIEL CUMPLIMIENTO</field>
+      <field ref="account_global_account_97" name="parent_id"/>
+      <field name="type">payable</field>
+      <field ref="account_type_payable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_102">
+      <field name="code">21202</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ANTICIPO DE CLIENTES</field>
+      <field ref="account_global_account_96" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_103">
+      <field name="code">21202001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DEMORAS - DEPOSITOS EN GARANTIA</field>
+      <field ref="account_global_account_102" name="parent_id"/>
+      <field name="type">payable</field>
+      <field ref="account_type_payable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_104">
+      <field name="code">213</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTRAS CUENTAS POR PAGAR</field>
+      <field ref="account_global_account_91" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_105">
+      <field name="code">21301</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS  POR PAGAR ACCIONISTAS</field>
+      <field ref="account_global_account_104" name="parent_id"/>
+      <field name="type">payable</field>
+      <field ref="account_type_payable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_106">
+      <field name="code">21302</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS  POR PAGAR DIRECTORES</field>
+      <field ref="account_global_account_104" name="parent_id"/>
+      <field name="type">payable</field>
+      <field ref="account_type_payable" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_107">
+      <field name="code">214</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OBLIGACIONES LABORABLES</field>
+      <field ref="account_global_account_91" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_108">
+      <field name="code">21401</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">NOMINAS POR PAGAR</field>
+      <field ref="account_global_account_107" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_109">
+      <field name="code">21402</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RETENCIONES AL PERSONAL</field>
+      <field ref="account_global_account_107" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_110">
+      <field name="code">21402001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">IVSS</field>
+      <field ref="account_global_account_109" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_111">
+      <field name="code">21402002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BANAVIH</field>
+      <field ref="account_global_account_109" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_112">
+      <field name="code">21402003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INCES</field>
+      <field ref="account_global_account_109" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_113">
+      <field name="code">21402004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PARO FORZOSO</field>
+      <field ref="account_global_account_109" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_114">
+      <field name="code">215</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">APORTES Y CONTRIBUCIONES  POR ENTERAR</field>
+      <field ref="account_global_account_91" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_115">
+      <field name="code">21501</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">APORTES </field>
+      <field ref="account_global_account_114" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_116">
+      <field name="code">21501001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">IVSS</field>
+      <field ref="account_global_account_115" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_117">
+      <field name="code">21501002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BANAVIH</field>
+      <field ref="account_global_account_115" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_118">
+      <field name="code">21501003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INCES</field>
+      <field ref="account_global_account_115" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_119">
+      <field name="code">21501004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PARO FORZOSO</field>
+      <field ref="account_global_account_115" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_120">
+      <field name="code">21501005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">HCM</field>
+      <field ref="account_global_account_115" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_121">
+      <field name="code">21502</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CONTRIBUCIONES POR ENTERAR</field>
+      <field ref="account_global_account_114" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_122">
+      <field name="code">21502001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">REGIMEN PRESTACIONAL DE EMPLEO</field>
+      <field ref="account_global_account_121" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_123">
+      <field name="code">21502002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">FONA </field>
+      <field ref="account_global_account_121" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_124">
+      <field name="code">21502003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">FONACIT</field>
+      <field ref="account_global_account_121" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_125">
+      <field name="code">21502004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">FONDE</field>
+      <field ref="account_global_account_121" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_126">
+      <field name="code">216</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OBLIGACIONES FISCALES POR PAGAR</field>
+      <field ref="account_global_account_91" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_127">
+      <field name="code">21601</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">IVA POR PAGAR</field>
+      <field ref="account_global_account_126" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_128">
+      <field name="code">21602</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DEBITOS  FISCALES - IVA  VENTAS</field>
+      <field ref="account_global_account_126" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_129">
+      <field name="code">21603</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RETENCIONES  IVA ( 75%)</field>
+      <field ref="account_global_account_126" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_130">
+      <field name="code">21604</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">EXCEDENTES DE DEBITOS FISCALES - IVA</field>
+      <field ref="account_global_account_126" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_131">
+      <field name="code">21605</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ISLR POR PAGAR</field>
+      <field ref="account_global_account_126" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_132">
+      <field name="code">21606</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RETENCIONES DEL ISLR POR SERVICIOS DE TERCEROS</field>
+      <field ref="account_global_account_126" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_133">
+      <field name="code">21607</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ESTIMADA DEL  ISLR</field>
+      <field ref="account_global_account_126" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_134">
+      <field name="code">21608</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">IMPUESTOS MUNICIPALES</field>
+      <field ref="account_global_account_126" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_135">
+      <field name="code">22</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PASIVO  NO  CORRIENTE</field>
+      <field ref="account_global_account_90" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_136">
+      <field name="code">221</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OBLIGACIONES FINANCIERAS - LARGO PLAZO</field>
+      <field ref="account_global_account_135" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_137">
+      <field name="code">22101</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">EFECTOS POR PAGAR BANCARIOS - L.P.</field>
+      <field ref="account_global_account_136" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_138">
+      <field name="code">22101001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BANESCO</field>
+      <field ref="account_global_account_137" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_139">
+      <field name="code">22101002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BANCO ACTIVO</field>
+      <field ref="account_global_account_137" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_140">
+      <field name="code">222</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DEUDAS COMERCIALES A LARGO PAZO</field>
+      <field ref="account_global_account_135" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_141">
+      <field name="code">22201</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">TERCEROS</field>
+      <field ref="account_global_account_140" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_142">
+      <field name="code">22202</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">LINEA - PORCION L.P.</field>
+      <field ref="account_global_account_140" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_143">
+      <field name="code">22203</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS  POR PAGAR  AFILIADAS</field>
+      <field ref="account_global_account_140" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_144">
+      <field name="code">22203001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS PORTUARIOS CENTAURO</field>
+      <field ref="account_global_account_143" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_145">
+      <field name="code">22203002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS PORTUARIOS VENESTIBA</field>
+      <field ref="account_global_account_143" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_146">
+      <field name="code">22203003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MARITIMA LA RESTINGA</field>
+      <field ref="account_global_account_143" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_147">
+      <field name="code">22203004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">EIR CONTROL</field>
+      <field ref="account_global_account_143" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_148">
+      <field name="code">22203005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSCO OCEAN  SHIPPING</field>
+      <field ref="account_global_account_143" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_149">
+      <field name="code">22203006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR VENALCA</field>
+      <field ref="account_global_account_143" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_150">
+      <field name="code">22203007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR PRIME LOGIST</field>
+      <field ref="account_global_account_143" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_151">
+      <field name="code">22203008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CUENTAS POR COBRAR GLOBAL SHIPPING LOGISTIES</field>
+      <field ref="account_global_account_143" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_152">
+      <field name="code">3</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PATRIMONIO</field>
+      <field ref="account_global_account_0" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_153">
+      <field name="code">31</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CAPITAL SOCIAL</field>
+      <field ref="account_global_account_152" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_154">
+      <field name="code">311</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CAPITAL SOCIAL PAGADO</field>
+      <field ref="account_global_account_153" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_155">
+      <field name="code">32</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RESERVAS</field>
+      <field ref="account_global_account_152" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_156">
+      <field name="code">321</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RESERVA LEGAL</field>
+      <field ref="account_global_account_155" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_157">
+      <field name="code">322</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RESERVA PARA CONTINGENCIAS</field>
+      <field ref="account_global_account_155" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_158">
+      <field name="code">33</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name"> UTILIDADES NO DISTRIBUIDAS </field>
+      <field ref="account_global_account_152" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_159">
+      <field name="code">331</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name"> SUPERAVIT ( DEFICIT ) DEL PERIODO </field>
+      <field ref="account_global_account_158" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_160">
+      <field name="code">332</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name"> SUPERAVIT ( DEFICIT ) ACUMULADO </field>
+      <field ref="account_global_account_158" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_161">
+      <field name="code">333</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name"> AJUSTES AÑOS ANTERIORES </field>
+      <field ref="account_global_account_158" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_cash" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_162">
+      <field name="code">4</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INGRESOS</field>
+      <field ref="account_global_account_0" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_163">
+      <field name="code">41</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INGRESOS OPERACIONALES</field>
+      <field ref="account_global_account_162" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_164">
+      <field name="code">411</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INGRESOS  POR  SERVICIOS PRESTADOS - COSCO</field>
+      <field ref="account_global_account_163" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_165">
+      <field name="code">41101</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CARGA Y DESCARGA DE BUQUES</field>
+      <field ref="account_global_account_164" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_166">
+      <field name="code">410101001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MANEJO DE CARGA Y DESCARGA</field>
+      <field ref="account_global_account_165" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_167">
+      <field name="code">410101002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RECEPCION Y LIMPIEZA DE CONTENEDORES </field>
+      <field ref="account_global_account_165" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_168">
+      <field name="code">410101003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE RECUPERACION  DE CONTENEDORES </field>
+      <field ref="account_global_account_165" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_169">
+      <field name="code">410101004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DOCUMENTACION </field>
+      <field ref="account_global_account_165" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_170">
+      <field name="code">410101005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">T.S.C.</field>
+      <field ref="account_global_account_165" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_171">
+      <field name="code">410101006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PIBP</field>
+      <field ref="account_global_account_165" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_172">
+      <field name="code">410101007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">EMISION DE BLS</field>
+      <field ref="account_global_account_165" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_173">
+      <field name="code">410101008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS ADMINISTRATIVOS</field>
+      <field ref="account_global_account_165" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_174">
+      <field name="code">410101009</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS PORTUARIOS</field>
+      <field ref="account_global_account_165" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_175">
+      <field name="code">410101010</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CONGESTION PORTUARIA</field>
+      <field ref="account_global_account_165" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_176">
+      <field name="code">410101011</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INSPECCION DE FERRYS</field>
+      <field ref="account_global_account_165" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_177">
+      <field name="code">412</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INGRESOS  POR  SERVICIOS PRESTADOS - OCAMAR</field>
+      <field ref="account_global_account_163" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_178">
+      <field name="code">41201</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OPERACIONES  DE  ALMACENAJE</field>
+      <field ref="account_global_account_177" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_179">
+      <field name="code">41201001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ORDEN DE ELEVADOR</field>
+      <field ref="account_global_account_178" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_180">
+      <field name="code">41201002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE ALMACENAJE</field>
+      <field ref="account_global_account_178" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_181">
+      <field name="code">41201003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS ADMINISTRATIVOS</field>
+      <field ref="account_global_account_178" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_182">
+      <field name="code">413</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INGRESOS  POR  SERVICIOS PRESTADOS - SILOS</field>
+      <field ref="account_global_account_163" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_183">
+      <field name="code">41301</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OPERACIONES  DE  ALMACENAJE</field>
+      <field ref="account_global_account_182" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_184">
+      <field name="code">41301001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MANEJO DE CARGA EN SILOS</field>
+      <field ref="account_global_account_183" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_185">
+      <field name="code">41301002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE ALMACENAJE</field>
+      <field ref="account_global_account_183" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_186">
+      <field name="code">41301003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DESCARGA DE MERCANCIA A GRANEL</field>
+      <field ref="account_global_account_183" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_187">
+      <field name="code">41301004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DESPACHO DE MERCANCIA A GRANEL</field>
+      <field ref="account_global_account_183" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_188">
+      <field name="code">41301005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">HABILITACIONES DE SILOS</field>
+      <field ref="account_global_account_183" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_189">
+      <field name="code">414</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INGRESOS  POR  SERVICIOS PRESTADOS - MAERSK</field>
+      <field ref="account_global_account_163" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_190">
+      <field name="code">41401</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CARGA Y DESCARGA DE BUQUES</field>
+      <field ref="account_global_account_189" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_191">
+      <field name="code">41401001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE ESTIBAS DE BUQUES</field>
+      <field ref="account_global_account_190" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_192">
+      <field name="code">41401002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE AGENCIAMIENTO DE BUQUES</field>
+      <field ref="account_global_account_190" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_193">
+      <field name="code">41401003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS SERVICIOS</field>
+      <field ref="account_global_account_190" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_income" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_194">
+      <field name="code">5</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSTOS </field>
+      <field ref="account_global_account_0" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_195">
+      <field name="code">51</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSTOS DE OPERACIONES</field>
+      <field ref="account_global_account_194" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_196">
+      <field name="code">511</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSTOS DE LOS SERVICIOS PRESTADOS - COSCO</field>
+      <field ref="account_global_account_195" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_197">
+      <field name="code">51101</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSTOS DE CARGA Y DESCARGA DE BUQUES </field>
+      <field ref="account_global_account_196" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_198">
+      <field name="code">51101001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">FLETES Y ACARREOS EN OPERACIONES</field>
+      <field ref="account_global_account_197" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_199">
+      <field name="code">51101002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">HABILITACIONES EN OPERACIONES</field>
+      <field ref="account_global_account_197" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_200">
+      <field name="code">51101003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">REPARACION Y REPUESTOS DE MAQUINARIAS</field>
+      <field ref="account_global_account_197" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_201">
+      <field name="code">51101004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSTOS DE MANTENIMIENTO PREVENTIVOS</field>
+      <field ref="account_global_account_197" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_202">
+      <field name="code">51101005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSTOS VARIOS DE OPERACIONES</field>
+      <field ref="account_global_account_197" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_203">
+      <field name="code">51102</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE ESTIBA</field>
+      <field ref="account_global_account_196" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_204">
+      <field name="code">51102001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ALQUILER  DE EQUIPOS</field>
+      <field ref="account_global_account_203" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_205">
+      <field name="code">51102002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RECURSOS  HUMANOS</field>
+      <field ref="account_global_account_203" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_206">
+      <field name="code">51102003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MOVILIZACION DE CONTENEDORES</field>
+      <field ref="account_global_account_203" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_207">
+      <field name="code">51103</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE AGENCIAMIENTO</field>
+      <field ref="account_global_account_196" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_208">
+      <field name="code">51103001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSTOS DEL SERVICIO DE AGENCIAMIENTO - </field>
+      <field ref="account_global_account_207" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_209">
+      <field name="code">51104</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS COSTOS DE OPERACIONES</field>
+      <field ref="account_global_account_196" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_210">
+      <field name="code">51104001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">USO DE SUPERFICIE EN MUELLES</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_211">
+      <field name="code">51104002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ALQUILER DE MAQUINARIAS Y HERRAMIENTAS</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_212">
+      <field name="code">51104003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE TRANSPORTE</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_213">
+      <field name="code">51104004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE RECOLECCION DE BASURA  Y DESECHOS SOLIDOS</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_214">
+      <field name="code">51104005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE USO DE FARO Y BOYA ( OCHIMA )</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_215">
+      <field name="code">51104006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE EMBARQUE Y DESEMBARQUE DE PILOTO</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_216">
+      <field name="code">51104007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE PILOTAJE  - INEA</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_217">
+      <field name="code">51104008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE FONDO ACUATICO - INEA</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_218">
+      <field name="code">51104009</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE LANCHAJE MARITIMO - INEA</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_219">
+      <field name="code">51104010</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE MUELLAJE -  IPAPC</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_220">
+      <field name="code">51104011</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE ATRAQUE Y DESATRAQUE</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_221">
+      <field name="code">51104012</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE AMARRE Y DESAMARRE</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_222">
+      <field name="code">51104013</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DERECHO DE ARRIBO</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_223">
+      <field name="code">51104014</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE REMOLCADORES </field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_224">
+      <field name="code">51104015</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE SEGURIDAD - PBIP</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_225">
+      <field name="code">51104016</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE INSPECCION DE BUQUES</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_226">
+      <field name="code">51104017</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ANALISIS MANIFIESTO DE CARGA PELIGROSA</field>
+      <field ref="account_global_account_209" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_227">
+      <field name="code">51105</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DEL PERSONAL</field>
+      <field ref="account_global_account_196" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_228">
+      <field name="code">51105001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SUELDOS Y SALARIOS</field>
+      <field ref="account_global_account_227" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_229">
+      <field name="code">51105002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">UTILIDADES</field>
+      <field ref="account_global_account_227" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_230">
+      <field name="code">51105003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BONIFICACIOBES ESPECIALES</field>
+      <field ref="account_global_account_227" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_231">
+      <field name="code">51105004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BONO VACACIONAL</field>
+      <field ref="account_global_account_227" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_232">
+      <field name="code">51105005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INDEMNIZACIONES  LABORABLES</field>
+      <field ref="account_global_account_227" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_233">
+      <field name="code">51105006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE  CESTATICKETS</field>
+      <field ref="account_global_account_227" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_234">
+      <field name="code">51105007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">APORTES SSO INCESLOCTIPOLITICA HABITACIONAL</field>
+      <field ref="account_global_account_227" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_235">
+      <field name="code">51105008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS  GASTOS DEL PERSONAL</field>
+      <field ref="account_global_account_227" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_236">
+      <field name="code">51105009</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS MEDICOS Y MEDICINAS</field>
+      <field ref="account_global_account_227" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_237">
+      <field name="code">51105010</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS BENEFICIOS LABORABLES</field>
+      <field ref="account_global_account_227" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_238">
+      <field name="code">51105011</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">POLIZAS HCM </field>
+      <field ref="account_global_account_227" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_239">
+      <field name="code">51106</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS GENERALES DE OFICINAS</field>
+      <field ref="account_global_account_196" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_240">
+      <field name="code">51106001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PAPELERIA Y EFECTOS DE OFICINAS</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_241">
+      <field name="code">51106002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MATERIALES DE LIMPIEZA Y ASEO</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_242">
+      <field name="code">51106003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE TELEFONO E INTERNET</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_243">
+      <field name="code">51106004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE ELECTRICIDAD</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_244">
+      <field name="code">51106005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE ASEO URBANO</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_245">
+      <field name="code">51106006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ALQUILER DE OFICINAS</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_246">
+      <field name="code">51106007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE ENCOMIENDA</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_247">
+      <field name="code">51106008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS LEGALES  Y  DE  TRAMITACION</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_248">
+      <field name="code">51106009</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE VIAJE</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_249">
+      <field name="code">51106010</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE REPRESENTACION</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_250">
+      <field name="code">51106011</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE TRANSPORTE</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_251">
+      <field name="code">51106012</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE INSCRIPCION EN PUERTOS</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_252">
+      <field name="code">51106013</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PATENTE DE INDUSTRIA Y COMERCIO</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_253">
+      <field name="code">51106014</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">HONORARIOS PROFESIONALES</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_254">
+      <field name="code">51106015</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS VARIOS</field>
+      <field ref="account_global_account_239" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_255">
+      <field name="code">512</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSTOS DE LOS SERVICIOS PRESTADOS - SILOS</field>
+      <field ref="account_global_account_195" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_256">
+      <field name="code">51201</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSTOS DE CARGA Y DESCARGA - SILOS</field>
+      <field ref="account_global_account_255" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_257">
+      <field name="code">51201001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">LIMPIEZA Y MANTENIMIENTO</field>
+      <field ref="account_global_account_256" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_258">
+      <field name="code">51201002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">REPARACION DE EQUIPOS</field>
+      <field ref="account_global_account_256" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_259">
+      <field name="code">51201003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">REPUESTOS Y ACCESORIOS</field>
+      <field ref="account_global_account_256" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_260">
+      <field name="code">51201004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">USO DE SUPERFICIES</field>
+      <field ref="account_global_account_256" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_261">
+      <field name="code">51201005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ALQUILER DE MAQUINARIAS</field>
+      <field ref="account_global_account_256" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_262">
+      <field name="code">51201006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MANEJO DE CARGAS A SILOS</field>
+      <field ref="account_global_account_256" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_263">
+      <field name="code">51201007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DERECHO DE ALMACENAJE EN SILOS</field>
+      <field ref="account_global_account_256" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_264">
+      <field name="code">51201008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS COSTOS DE SILOS</field>
+      <field ref="account_global_account_256" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_265">
+      <field name="code">51202</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DEL PERSONAL - SILOS</field>
+      <field ref="account_global_account_255" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_266">
+      <field name="code">51202001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SUELDOS Y SALARIOS</field>
+      <field ref="account_global_account_265" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_267">
+      <field name="code">51202002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">UTILIDADES</field>
+      <field ref="account_global_account_265" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_268">
+      <field name="code">51202003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BONIFICACIOBES ESPECIALES</field>
+      <field ref="account_global_account_265" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_269">
+      <field name="code">51202004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BONO VACACIONAL</field>
+      <field ref="account_global_account_265" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_270">
+      <field name="code">51202005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INDEMNIZACIONES  LABORABLES</field>
+      <field ref="account_global_account_265" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_271">
+      <field name="code">51202006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE  CESTATICKETS</field>
+      <field ref="account_global_account_265" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_272">
+      <field name="code">51202007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">APORTES SSO INCESLOCTIPOLITICA HABITACIONAL</field>
+      <field ref="account_global_account_265" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_273">
+      <field name="code">51202008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS  GASTOS DEL PERSONAL</field>
+      <field ref="account_global_account_265" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_274">
+      <field name="code">51202009</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS MEDICOS Y MEDICINAS</field>
+      <field ref="account_global_account_265" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_275">
+      <field name="code">51202010</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS BENEFICIOS LABORABLES</field>
+      <field ref="account_global_account_265" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_276">
+      <field name="code">51202011</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">POLIZAS HCM </field>
+      <field ref="account_global_account_265" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_277">
+      <field name="code">51203</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS GENERALES DE OFICINAS -  SILOS</field>
+      <field ref="account_global_account_255" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_278">
+      <field name="code">51203001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PAPELERIA Y EFECTOS DE OFICINAS</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_279">
+      <field name="code">51203002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MATERIALES DE LIMPIEZA Y ASEO</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_280">
+      <field name="code">51203003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE TELEFONO E INTERNET</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_281">
+      <field name="code">51203004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE ELECTRICIDAD</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_282">
+      <field name="code">51203005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE ASEO URBANO</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_283">
+      <field name="code">51203006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ALQUILER DE OFICINAS</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_284">
+      <field name="code">51203007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE ENCOMIENDA</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_285">
+      <field name="code">51203008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS LEGALES  Y  DE  TRAMITACION</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_286">
+      <field name="code">51203009</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE VIAJE</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_287">
+      <field name="code">51203010</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE REPRESENTACION</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_288">
+      <field name="code">51203011</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE TRANSPORTE</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_289">
+      <field name="code">51203012</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE INSCRIPCION EN PUERTOS</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_290">
+      <field name="code">51203013</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PATENTE DE INDUSTRIA Y COMERCIO</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_291">
+      <field name="code">51203014</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">HONORARIOS PROFESIONALES</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_292">
+      <field name="code">51203015</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS VARIOS</field>
+      <field ref="account_global_account_277" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_293">
+      <field name="code">513</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSTOS DE LOS SERVICIOS PRESTADOS - OCAMAR</field>
+      <field ref="account_global_account_195" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_294">
+      <field name="code">51301</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSTOS OPERATIVOS</field>
+      <field ref="account_global_account_293" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_295">
+      <field name="code">51301001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">LIMPIEZA Y MANTENIMIENTO</field>
+      <field ref="account_global_account_294" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_296">
+      <field name="code">51301002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">REPARACION DE EQUIPOS</field>
+      <field ref="account_global_account_294" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_297">
+      <field name="code">51301003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">REPUESTOS Y ACCESORIOS</field>
+      <field ref="account_global_account_294" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_298">
+      <field name="code">51301004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">USO DE SUPERFICIES</field>
+      <field ref="account_global_account_294" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_299">
+      <field name="code">51301005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ALQUILER DE MAQUINARIAS</field>
+      <field ref="account_global_account_294" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_300">
+      <field name="code">51301006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MANEJO DE CONTENEDORES</field>
+      <field ref="account_global_account_294" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_301">
+      <field name="code">51301007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COMBUSTIBLES</field>
+      <field ref="account_global_account_294" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_302">
+      <field name="code">51301008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS COSTOS </field>
+      <field ref="account_global_account_294" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_303">
+      <field name="code">51302</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DEL PERSONAL - OCAMAR</field>
+      <field ref="account_global_account_293" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_304">
+      <field name="code">51302001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SUELDOS Y SALARIOS</field>
+      <field ref="account_global_account_303" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_305">
+      <field name="code">51302002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">UTILIDADES</field>
+      <field ref="account_global_account_303" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_306">
+      <field name="code">51302003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BONIFICACIOBES ESPECIALES</field>
+      <field ref="account_global_account_303" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_307">
+      <field name="code">51302004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BONO VACACIONAL</field>
+      <field ref="account_global_account_303" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_308">
+      <field name="code">51302005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INDEMNIZACIONES  LABORABLES</field>
+      <field ref="account_global_account_303" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_309">
+      <field name="code">51302006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE  CESTATICKETS</field>
+      <field ref="account_global_account_303" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_310">
+      <field name="code">51302007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">APORTES SSO INCESLOCTIPOLITICA HABITACIONAL</field>
+      <field ref="account_global_account_303" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_311">
+      <field name="code">51302008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS  GASTOS DEL PERSONAL</field>
+      <field ref="account_global_account_303" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_312">
+      <field name="code">51302009</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS MEDICOS Y MEDICINAS</field>
+      <field ref="account_global_account_303" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_313">
+      <field name="code">51302010</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS BENEFICIOS LABORABLES</field>
+      <field ref="account_global_account_303" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_314">
+      <field name="code">51302011</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">POLIZAS HCM </field>
+      <field ref="account_global_account_303" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_315">
+      <field name="code">514</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSTOS DE LOS SERVICIOS PRESTADOS - MAERSK</field>
+      <field ref="account_global_account_195" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_316">
+      <field name="code">51401</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COSTOS DE CARGA Y DESCARGA </field>
+      <field ref="account_global_account_315" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_317">
+      <field name="code">51401001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">LIMPIEZA Y MANTENIMIENTO</field>
+      <field ref="account_global_account_316" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_318">
+      <field name="code">51401002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">REPARACION DE EQUIPOS</field>
+      <field ref="account_global_account_317" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_319">
+      <field name="code">51401003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">REPUESTOS Y ACCESORIOS</field>
+      <field ref="account_global_account_318" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_320">
+      <field name="code">51401004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">USO DE SUPERFICIES</field>
+      <field ref="account_global_account_319" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_321">
+      <field name="code">51401005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ALQUILER DE MAQUINARIAS</field>
+      <field ref="account_global_account_320" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_322">
+      <field name="code">51401006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MANEJO DE CONTENEDORES</field>
+      <field ref="account_global_account_321" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_323">
+      <field name="code">51401007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">COMBUSTIBLES</field>
+      <field ref="account_global_account_322" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_324">
+      <field name="code">51401008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS COSTOS </field>
+      <field ref="account_global_account_323" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_325">
+      <field name="code">51402</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS COSTOS DE OPERACIONES - MAERSK</field>
+      <field ref="account_global_account_315" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_326">
+      <field name="code">51402001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">USO DE SUPERFICIE EN MUELLES</field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_327">
+      <field name="code">51402002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ALQUILER DE MAQUINARIAS Y HERRAMIENTAS</field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_328">
+      <field name="code">51402003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE TRANSPORTE</field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_329">
+      <field name="code">51402004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE PILOTAJE  - INEA</field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_330">
+      <field name="code">51402005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE FONDO ACUATICO - INEA</field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_331">
+      <field name="code">51402006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE LANCHAJE MARITIMO - INEA</field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_332">
+      <field name="code">51402007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE MUELLAJE -  IPAPC</field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_333">
+      <field name="code">51402008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE EMBARQUE Y DESEMBARQUE</field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_334">
+      <field name="code">51402009</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE AMARRE Y DESAMARRE</field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_335">
+      <field name="code">51402010</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">DERECHO DE ARRIBO</field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_336">
+      <field name="code">51402011</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE REMOLCADORES </field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_337">
+      <field name="code">51402012</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE SEGURIDAD - PBIP</field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_338">
+      <field name="code">51402013</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE INSPECCION SUBMARINA</field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_339">
+      <field name="code">51402014</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ANALISIS MANIFIESTO DE CARGA PELIGROSA</field>
+      <field ref="account_global_account_325" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_340">
+      <field name="code">51403</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE ESTIBA - MAERSK</field>
+      <field ref="account_global_account_315" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_341">
+      <field name="code">51403001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ALQUILER  DE EQUIPOS</field>
+      <field ref="account_global_account_340" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_342">
+      <field name="code">51403002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RECURSOS  HUMANOS</field>
+      <field ref="account_global_account_340" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_343">
+      <field name="code">51403003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MOVILIZACION DE CONTENEDORES</field>
+      <field ref="account_global_account_340" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_344">
+      <field name="code">6</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS</field>
+      <field ref="account_global_account_0" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_345">
+      <field name="code">61</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE ADMINISTRACION </field>
+      <field ref="account_global_account_344" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_346">
+      <field name="code">611</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS POR SERVICIOS PRESTADOS </field>
+      <field ref="account_global_account_345" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_347">
+      <field name="code">61101</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DEL PERSONAL</field>
+      <field ref="account_global_account_346" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_348">
+      <field name="code">61101001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SUELDOS Y SALARIOS</field>
+      <field ref="account_global_account_347" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_349">
+      <field name="code">61101002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">UTILIDADES</field>
+      <field ref="account_global_account_347" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_350">
+      <field name="code">61101003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BONIFICACIOBES ESPECIALES</field>
+      <field ref="account_global_account_347" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_351">
+      <field name="code">61101004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BONO VACACIONAL</field>
+      <field ref="account_global_account_347" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_352">
+      <field name="code">61101005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INDEMNIZACIONES  LABORABLES</field>
+      <field ref="account_global_account_347" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_353">
+      <field name="code">61101006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE  CESTATICKETS</field>
+      <field ref="account_global_account_347" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_354">
+      <field name="code">61101007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">APORTES SSO INCESLOCTIPOLITICA HABITACIONAL</field>
+      <field ref="account_global_account_347" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_355">
+      <field name="code">61101008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS  GASTOS DEL PERSONAL</field>
+      <field ref="account_global_account_347" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_356">
+      <field name="code">61101009</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS MEDICOS Y MEDICINAS</field>
+      <field ref="account_global_account_347" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_357">
+      <field name="code">61101010</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS BENEFICIOS LABORABLES</field>
+      <field ref="account_global_account_347" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_358">
+      <field name="code">61101011</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">POLIZAS HCM </field>
+      <field ref="account_global_account_347" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_359">
+      <field name="code">61102</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS GENERALES DE OFICINAS</field>
+      <field ref="account_global_account_346" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_360">
+      <field name="code">61102001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PAPELERIA Y EFECTOS DE OFICINAS</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_361">
+      <field name="code">61102002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MATERIALES DE LIMPIEZA Y ASEO</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_362">
+      <field name="code">61102003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE TELEFONO E INTERNET</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_363">
+      <field name="code">61102004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE ELECTRICIDAD</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_364">
+      <field name="code">61102005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIO DE ASEO URBANO</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_365">
+      <field name="code">61102006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ALQUILER DE OFICINAS</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_366">
+      <field name="code">61102007</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">SERVICIOS DE TRANSPORTE Y  ENCOMIENDA</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_367">
+      <field name="code">61102008</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS LEGALES  Y  DE  TRAMITACION</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_368">
+      <field name="code">61102009</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE VIAJE NACIONALES</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_369">
+      <field name="code">61102010</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE VIAJE INTERNACIONALES (50%)</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_370">
+      <field name="code">61102011</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS GENERALES DEL AVION</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_371">
+      <field name="code">61102012</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">CONSUMOS DE COMPUTACION </field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_372">
+      <field name="code">61102013</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">REPARACION Y MANTENIMIENTO DE EQUIPOS DE OFICINAS</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_373">
+      <field name="code">61102014</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS GENERALES DE OFICINAS</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_374">
+      <field name="code">61102015</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE SEGUROS Y FIANZAS</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_375">
+      <field name="code">61102016</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">ALQUILER DE EQUIPOS DE OFICINAS</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_376">
+      <field name="code">61102017</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">HONORARIOS PROFESIONALES</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_377">
+      <field name="code">61102018</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">PUBLICIDAD Y PROPAGANDA</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_378">
+      <field name="code">61102019</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">IMPUESTOS Y CONTRIBUCIONES</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_379">
+      <field name="code">61102020</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS LEGALES  Y  DE  TRAMITACION</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_380">
+      <field name="code">61102021</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INTERESES FINANCIEROS</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_381">
+      <field name="code">61102022</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS DE DEPRECIACION DE ACTIVO FIJO</field>
+      <field ref="account_global_account_359" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_382">
+      <field name="code">7</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INGRESOS NO OPERACIONALES</field>
+      <field ref="account_global_account_0" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_383">
+      <field name="code">71</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">FINANCIEROS</field>
+      <field ref="account_global_account_382" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_384">
+      <field name="code">711</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INTERESES BANCARIOS</field>
+      <field ref="account_global_account_383" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_385">
+      <field name="code">71101001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name"> BANCRECER</field>
+      <field ref="account_global_account_384" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_386">
+      <field name="code">72</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS INGRESOS</field>
+      <field ref="account_global_account_382" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_387">
+      <field name="code">721</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INDEMNIZACIONES CIAS. DE SEGUROS</field>
+      <field ref="account_global_account_386" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_388">
+      <field name="code">72101001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INDEMNIZACIONES CIAS. DE SEGUROS</field>
+      <field ref="account_global_account_386" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_389">
+      <field name="code">8</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">EGRESOS NO OPERACIONALES</field>
+      <field ref="account_global_account_0" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_390">
+      <field name="code">81</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS FINANCIEROS</field>
+      <field ref="account_global_account_389" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_391">
+      <field name="code">811</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">BANCARIOS</field>
+      <field ref="account_global_account_390" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_392">
+      <field name="code">81101</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">INTERESES Y COMISIONES BANCARIAS</field>
+      <field ref="account_global_account_391" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_393">
+      <field name="code">81102</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS GASTOS FINANCIEROS</field>
+      <field ref="account_global_account_391" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_394">
+      <field name="code">82</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">GASTOS NO DEDUCIBLES</field>
+      <field ref="account_global_account_389" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_395">
+      <field name="code">821</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">IMPUESTOS NACIONALES  Y  MUNICIPALES</field>
+      <field ref="account_global_account_394" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_396">
+      <field name="code">82101</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">IMPUESTOS Y TRIBUTOS NO DEDUCIBLES</field>
+      <field ref="account_global_account_395" name="parent_id"/>
+      <field name="type">view</field>
+      <field ref="account_type_view" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_397">
+      <field name="code">82101001</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">I.S.L.R.</field>
+      <field ref="account_global_account_396" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_398">
+      <field name="code">82101002</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MULTAS DEL  I.S.L.R.</field>
+      <field ref="account_global_account_396" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_399">
+      <field name="code">82101003</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">MULTAS DEL  IVA</field>
+      <field ref="account_global_account_396" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_400">
+      <field name="code">82101004</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">IMPUESTOS MUNICIPALES</field>
+      <field ref="account_global_account_396" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_401">
+      <field name="code">82101005</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">RETENCIONES DE RESPONSABILIDAD SOCIAL</field>
+      <field ref="account_global_account_396" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record model="account.account.template" id="account_global_account_402">
+      <field name="code">82101006</field>
+      <field name="reconcile" eval="False"/>
+      <field name="name">OTROS GASTOS NO DEDUCIBLES</field>
+      <field ref="account_global_account_396" name="parent_id"/>
+      <field name="type">other</field>
+      <field ref="account_type_expense" name="user_type"/>
+    </record>
+
+    <record id="ve_chart_template_global" model="account.chart.template">
+      <field name="name">Global Shipping S.A. - Account Chart</field>
+      <field name="account_root_id" ref="account_global_account_0"/>
+      <field name="currency_id" ref="base.VEF"/>
+      <field name="bank_account_view_id" ref="account_global_account_11"/>
+    </record>
+  </data>
+</openerp>

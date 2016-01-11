@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Reporte Inventario Actual -->
+		<record id= "ctrl_equipos_reporte_general" model="ir.exports">
+			<field name="name">Inventario Actual</field>
+			<field name="resource">contenedor</field>
+			<field name="domain">[('state','!=','embarcado_vacio'),('state','!=','embarcado_full'),('state','!=','entregado_shiperon'),('state','!=','embarcado_shiperon')]</field>
+			<field name="owner">CE</field>
+		</record>
+		<record id= "ctrl_equipos_reporte_general_numero" model="ir.exports.line">
+			<field name="name">numero</field>
+			<field name="export_id" ref="ctrl_equipos_reporte_general"></field>
+			<field name="sequence">0</field>
+			<field name="heading">Número</field>
+		</record>
+		<record id= "ctrl_equipos_reporte_general_tipo" model="ir.exports.line">
+			<field name="name">tipo/descripcion</field>
+			<field name="export_id" ref="ctrl_equipos_reporte_general"></field>
+			<field name="sequence">1</field>
+			<field name="heading">Tipo</field>
+		</record>
+		<record id= "ctrl_equipos_reporte_general_bl" model="ir.exports.line">
+			<field name="name">no_bl/no_bl</field>
+			<field name="export_id" ref="ctrl_equipos_reporte_general"></field>
+			<field name="sequence">2</field>
+			<field name="heading">BL</field>
+		</record>
+		<record id= "ctrl_equipos_reporte_general_buque" model="ir.exports.line">
+			<field name="name">buque/nombre</field>
+			<field name="export_id" ref="ctrl_equipos_reporte_general"></field>
+			<field name="sequence">3</field>
+			<field name="heading">Buque</field>
+		</record>
+		<record id= "ctrl_equipos_reporte_general_viaje" model="ir.exports.line">
+			<field name="name">viaje_id/numero</field>
+			<field name="export_id" ref="ctrl_equipos_reporte_general"></field>
+			<field name="sequence">4</field>
+			<field name="heading">Viaje</field>
+		</record>
+		<record id= "ctrl_equipos_reporte_general_puerto_llegada" model="ir.exports.line">
+			<field name="name">viaje_id/puerto_arribo/descripcion</field>
+			<field name="export_id" ref="ctrl_equipos_reporte_general"></field>
+			<field name="sequence">5</field>
+			<field name="heading">Puerto De Arribo</field>
+		</record>
+		<record id= "ctrl_equipos_reporte_general_inicio_operaciones" model="ir.exports.line">
+			<field name="name">viaje_id/fecha_inicio_operaciones</field>
+			<field name="export_id" ref="ctrl_equipos_reporte_general"></field>
+			<field name="sequence">6</field>
+			<field name="heading">Inicio De Operaciones</field>
+		</record>
+		<record id= "ctrl_equipos_reporte_general_cliente" model="ir.exports.line">
+			<field name="name">customers/nombre</field>
+			<field name="export_id" ref="ctrl_equipos_reporte_general"></field>
+			<field name="sequence">7</field>
+			<field name="heading">Beneficiario</field>
+		</record>
+		<record id= "ctrl_equipos_reporte_general_fecha_despacho" model="ir.exports.line">
+			<field name="name">fecha_entrega</field>
+			<field name="export_id" ref="ctrl_equipos_reporte_general"></field>
+			<field name="sequence">8</field>
+			<field name="heading">Despacho</field>
+		</record>
+		<record id= "ctrl_equipos_reporte_general_fecha_fecha_devolucion" model="ir.exports.line">
+			<field name="name">fecha_devolucion</field>
+			<field name="export_id" ref="ctrl_equipos_reporte_general"></field>
+			<field name="sequence">9</field>
+			<field name="heading">Devolución</field>
+		</record>
+		<!-- Reporte Full en almacén -->
+		<record id= "ctrl_equipos_full_en_almacen" model="ir.exports">
+			<field name="name">Full en almacén</field>
+			<field name="resource">contenedor</field>
+			<field name="domain">[('eliminado','=',False),('state','=','en_puerto')]</field>
+			<field name="owner">CE</field>
+		</record>
+		<record id= "ctrl_equipos_full_en_almacen_numero" model="ir.exports.line">
+			<field name="name">numero</field>
+			<field name="export_id" ref="ctrl_equipos_full_en_almacen"></field>
+			<field name="sequence">0</field>
+			<field name="heading">Número</field>
+		</record>
+		<record id= "ctrl_equipos_full_en_almacen_tipo" model="ir.exports.line">
+			<field name="name">tipo/descripcion</field>
+			<field name="export_id" ref="ctrl_equipos_full_en_almacen"></field>
+			<field name="sequence">1</field>
+			<field name="heading">Tipo</field>
+		</record>
+		<record id= "ctrl_equipos_full_en_almacen_bl" model="ir.exports.line">
+			<field name="name">no_bl/no_bl</field>
+			<field name="export_id" ref="ctrl_equipos_full_en_almacen"></field>
+			<field name="sequence">2</field>
+			<field name="heading">BL</field>
+		</record>
+		<record id= "ctrl_equipos_full_en_almacen_buque" model="ir.exports.line">
+			<field name="name">buque/nombre</field>
+			<field name="export_id" ref="ctrl_equipos_full_en_almacen"></field>
+			<field name="sequence">3</field>
+			<field name="heading">Buque</field>
+		</record>
+		<record id= "ctrl_equipos_full_en_almacen_viaje" model="ir.exports.line">
+			<field name="name">viaje_id/numero</field>
+			<field name="export_id" ref="ctrl_equipos_full_en_almacen"></field>
+			<field name="sequence">4</field>
+			<field name="heading">Viaje</field>
+		</record>
+		<record id= "ctrl_equipos_full_en_almacen_puerto_llegada" model="ir.exports.line">
+			<field name="name">viaje_id/puerto_arribo/descripcion</field>
+			<field name="export_id" ref="ctrl_equipos_full_en_almacen"></field>
+			<field name="sequence">5</field>
+			<field name="heading">Puerto De Arribo</field>
+		</record>
+		<record id= "ctrl_equipos_full_en_almacen_inicio_operaciones" model="ir.exports.line">
+			<field name="name">viaje_id/fecha_inicio_operaciones</field>
+			<field name="export_id" ref="ctrl_equipos_full_en_almacen"></field>
+			<field name="sequence">6</field>
+			<field name="heading">Inicio De Operaciones</field>
+		</record>
+		<record id= "ctrl_equipos_full_en_almacen_cliente" model="ir.exports.line">
+			<field name="name">customers/nombre</field>
+			<field name="export_id" ref="ctrl_equipos_full_en_almacen"></field>
+			<field name="sequence">7</field>
+			<field name="heading">Beneficiario</field>
+		</record>
+		<!-- Reporte Entregados al consignatario -->
+		<record id= "ctrl_equipos_entregados_consignatario" model="ir.exports">
+			<field name="name">Entregados al consignatario</field>
+			<field name="resource">contenedor</field>
+			<field name="domain">[('eliminado','=',False),('state','=','despachado')]</field>
+			<field name="owner">CE</field>
+		</record>
+		<record id= "ctrl_equipos_entregados_consignatario_numero" model="ir.exports.line">
+			<field name="name">numero</field>
+			<field name="export_id" ref="ctrl_equipos_entregados_consignatario"></field>
+			<field name="sequence">0</field>
+			<field name="heading">Número</field>
+		</record>
+		<record id= "ctrl_equipos_entregados_consignatario_tipo" model="ir.exports.line">
+			<field name="name">tipo/descripcion</field>
+			<field name="export_id" ref="ctrl_equipos_entregados_consignatario"></field>
+			<field name="sequence">1</field>
+			<field name="heading">Tipo</field>
+		</record>
+		<record id= "ctrl_equipos_entregados_consignatario_bl" model="ir.exports.line">
+			<field name="name">no_bl/no_bl</field>
+			<field name="export_id" ref="ctrl_equipos_entregados_consignatario"></field>
+			<field name="sequence">2</field>
+			<field name="heading">BL</field>
+		</record>
+		<record id= "ctrl_equipos_entregados_consignatario_buque" model="ir.exports.line">
+			<field name="name">buque/nombre</field>
+			<field name="export_id" ref="ctrl_equipos_entregados_consignatario"></field>
+			<field name="sequence">3</field>
+			<field name="heading">Buque</field>
+		</record>
+		<record id= "ctrl_equipos_entregados_consignatario_viaje" model="ir.exports.line">
+			<field name="name">viaje_id/numero</field>
+			<field name="export_id" ref="ctrl_equipos_entregados_consignatario"></field>
+			<field name="sequence">4</field>
+			<field name="heading">Viaje</field>
+		</record>
+		<record id= "ctrl_equipos_entregados_consignatario_puerto_llegada" model="ir.exports.line">
+			<field name="name">viaje_id/puerto_arribo/descripcion</field>
+			<field name="export_id" ref="ctrl_equipos_entregados_consignatario"></field>
+			<field name="sequence">5</field>
+			<field name="heading">Puerto De Arribo</field>
+		</record>
+		<record id= "ctrl_equipos_entregados_consignatario_inicio_operaciones" model="ir.exports.line">
+			<field name="name">viaje_id/fecha_inicio_operaciones</field>
+			<field name="export_id" ref="ctrl_equipos_entregados_consignatario"></field>
+			<field name="sequence">6</field>
+			<field name="heading">Inicio De Operaciones</field>
+		</record>
+		<record id= "ctrl_equipos_entregados_consignatario_cliente" model="ir.exports.line">
+			<field name="name">customers/nombre</field>
+			<field name="export_id" ref="ctrl_equipos_entregados_consignatario"></field>
+			<field name="sequence">7</field>
+			<field name="heading">Beneficiario</field>
+		</record>
+		<record id= "ctrl_equipos_entregados_consignatario_fecha_despacho" model="ir.exports.line">
+			<field name="name">fecha_entrega</field>
+			<field name="export_id" ref="ctrl_equipos_entregados_consignatario"></field>
+			<field name="sequence">8</field>
+			<field name="heading">Despacho</field>
+		</record>
+		<!-- Reporte Recibidos vacío -->
+		<record id= "ctrl_equipos_recibido_vacio" model="ir.exports">
+			<field name="name">Recibidos vacío</field>
+			<field name="resource">contenedor</field>
+			<field name="domain">[('eliminado','=',False),('state','=','devuelto')]</field>
+			<field name="owner">CE</field>
+		</record>
+		<record id= "ctrl_equipos_recibido_vacio_numero" model="ir.exports.line">
+			<field name="name">numero</field>
+			<field name="export_id" ref="ctrl_equipos_recibido_vacio"></field>
+			<field name="sequence">0</field>
+			<field name="heading">Número</field>
+		</record>
+		<record id= "ctrl_equipos_recibido_vacio_tipo" model="ir.exports.line">
+			<field name="name">tipo/descripcion</field>
+			<field name="export_id" ref="ctrl_equipos_recibido_vacio"></field>
+			<field name="sequence">1</field>
+			<field name="heading">Tipo</field>
+		</record>
+		<record id= "ctrl_equipos_recibido_vacio_bl" model="ir.exports.line">
+			<field name="name">no_bl/no_bl</field>
+			<field name="export_id" ref="ctrl_equipos_recibido_vacio"></field>
+			<field name="sequence">2</field>
+			<field name="heading">BL</field>
+		</record>
+		<record id= "ctrl_equipos_recibido_vacio_buque" model="ir.exports.line">
+			<field name="name">buque/nombre</field>
+			<field name="export_id" ref="ctrl_equipos_recibido_vacio"></field>
+			<field name="sequence">3</field>
+			<field name="heading">Buque</field>
+		</record>
+		<record id= "ctrl_equipos_recibido_vacio_viaje" model="ir.exports.line">
+			<field name="name">viaje_id/numero</field>
+			<field name="export_id" ref="ctrl_equipos_recibido_vacio"></field>
+			<field name="sequence">4</field>
+			<field name="heading">Viaje</field>
+		</record>
+		<record id= "ctrl_equipos_recibido_vacio_puerto_llegada" model="ir.exports.line">
+			<field name="name">viaje_id/puerto_arribo/descripcion</field>
+			<field name="export_id" ref="ctrl_equipos_recibido_vacio"></field>
+			<field name="sequence">5</field>
+			<field name="heading">Puerto De Arribo</field>
+		</record>
+		<record id= "ctrl_equipos_recibido_vacio_inicio_operaciones" model="ir.exports.line">
+			<field name="name">viaje_id/fecha_inicio_operaciones</field>
+			<field name="export_id" ref="ctrl_equipos_recibido_vacio"></field>
+			<field name="sequence">6</field>
+			<field name="heading">Inicio De Operaciones</field>
+		</record>
+		<record id= "ctrl_equipos_recibido_vacio_cliente" model="ir.exports.line">
+			<field name="name">customers/nombre</field>
+			<field name="export_id" ref="ctrl_equipos_recibido_vacio"></field>
+			<field name="sequence">7</field>
+			<field name="heading">Beneficiario</field>
+		</record>
+		<record id= "ctrl_equipos_recibido_vacio_fecha_despacho" model="ir.exports.line">
+			<field name="name">fecha_entrega</field>
+			<field name="export_id" ref="ctrl_equipos_recibido_vacio"></field>
+			<field name="sequence">8</field>
+			<field name="heading">Despacho</field>
+		</record>
+		<record id= "ctrl_equipos_recibido_vacio_fecha_devolucion" model="ir.exports.line">
+			<field name="name">fecha_devolucion</field>
+			<field name="export_id" ref="ctrl_equipos_recibido_vacio"></field>
+			<field name="sequence">9</field>
+			<field name="heading">Devolución</field>
+		</record>
+		<!-- Reporte Embarcados vacío -->
+		<record id= "ctrl_equipos_embarcado_vacio" model="ir.exports">
+			<field name="name">Embarcados vacío</field>
+			<field name="resource">contenedor</field>
+			<field name="domain">[('eliminado','=',False),('state','=','embarcado_vacio')]</field>
+			<field name="owner">CE</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_vacio_numero" model="ir.exports.line">
+			<field name="name">numero</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_vacio"></field>
+			<field name="sequence">0</field>
+			<field name="heading">Número</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_vacio_tipo" model="ir.exports.line">
+			<field name="name">tipo/descripcion</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_vacio"></field>
+			<field name="sequence">1</field>
+			<field name="heading">Tipo</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_vacio_bl" model="ir.exports.line">
+			<field name="name">no_bl/no_bl</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_vacio"></field>
+			<field name="sequence">2</field>
+			<field name="heading">BL</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_vacio_buque" model="ir.exports.line">
+			<field name="name">buque/nombre</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_vacio"></field>
+			<field name="sequence">3</field>
+			<field name="heading">Buque</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_vacio_viaje" model="ir.exports.line">
+			<field name="name">viaje_id/numero</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_vacio"></field>
+			<field name="sequence">4</field>
+			<field name="heading">Viaje</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_vacio_puerto_llegada" model="ir.exports.line">
+			<field name="name">viaje_id/puerto_arribo/descripcion</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_vacio"></field>
+			<field name="sequence">5</field>
+			<field name="heading">Puerto De Arribo</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_vacio_inicio_operaciones" model="ir.exports.line">
+			<field name="name">viaje_id/fecha_inicio_operaciones</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_vacio"></field>
+			<field name="sequence">6</field>
+			<field name="heading">Inicio De Operaciones</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_vacio_cliente" model="ir.exports.line">
+			<field name="name">customers/nombre</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_vacio"></field>
+			<field name="sequence">7</field>
+			<field name="heading">Beneficiario</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_vacio_fecha_despacho" model="ir.exports.line">
+			<field name="name">fecha_entrega</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_vacio"></field>
+			<field name="sequence">8</field>
+			<field name="heading">Despacho</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_vacio_fecha_devolucion" model="ir.exports.line">
+			<field name="name">fecha_devolucion</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_vacio"></field>
+			<field name="sequence">9</field>
+			<field name="heading">Devolución</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_vacio_fecha_embarcado_vacio" model="ir.exports.line">
+			<field name="name">fecha_salida</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_vacio"></field>
+			<field name="sequence">10</field>
+			<field name="heading">Embarcado Vacío</field>
+		</record>
+		<!-- Reporte Embarcados full -->
+		<record id= "ctrl_equipos_embarcado_full" model="ir.exports">
+			<field name="name">Embarcados full</field>
+			<field name="resource">contenedor</field>
+			<field name="domain">[('eliminado','=',False),('state','=','embarcado_full')]</field>
+			<field name="owner">CE</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_full_numero" model="ir.exports.line">
+			<field name="name">numero</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_full"></field>
+			<field name="sequence">0</field>
+			<field name="heading">Número</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_full_tipo" model="ir.exports.line">
+			<field name="name">tipo/descripcion</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_full"></field>
+			<field name="sequence">1</field>
+			<field name="heading">Tipo</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_full_bl" model="ir.exports.line">
+			<field name="name">no_bl/no_bl</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_full"></field>
+			<field name="sequence">2</field>
+			<field name="heading">BL</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_full_buque" model="ir.exports.line">
+			<field name="name">buque/nombre</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_full"></field>
+			<field name="sequence">3</field>
+			<field name="heading">Buque</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_full_viaje" model="ir.exports.line">
+			<field name="name">viaje_id/numero</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_full"></field>
+			<field name="sequence">4</field>
+			<field name="heading">Viaje</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_full_puerto_llegada" model="ir.exports.line">
+			<field name="name">viaje_id/puerto_arribo/descripcion</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_full"></field>
+			<field name="sequence">5</field>
+			<field name="heading">Puerto De Arribo</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_full_inicio_operaciones" model="ir.exports.line">
+			<field name="name">viaje_id/fecha_inicio_operaciones</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_full"></field>
+			<field name="sequence">6</field>
+			<field name="heading">Inicio De Operaciones</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_full_cliente" model="ir.exports.line">
+			<field name="name">customers/nombre</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_full"></field>
+			<field name="sequence">7</field>
+			<field name="heading">Beneficiario</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_full_fecha_despacho" model="ir.exports.line">
+			<field name="name">fecha_entrega</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_full"></field>
+			<field name="sequence">8</field>
+			<field name="heading">Despacho</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_full_fecha_devolucion" model="ir.exports.line">
+			<field name="name">fecha_devolucion</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_full"></field>
+			<field name="sequence">9</field>
+			<field name="heading">Devolución</field>
+		</record>
+		<record id= "ctrl_equipos_embarcado_full_fecha_embarcado_full" model="ir.exports.line">
+			<field name="name">fecha_salida</field>
+			<field name="export_id" ref="ctrl_equipos_embarcado_full"></field>
+			<field name="sequence">10</field>
+			<field name="heading">Embarcado Full</field>
+		</record>
+	</data>
+</openerp>

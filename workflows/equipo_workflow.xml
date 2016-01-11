@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<record model="workflow" id="wkf_equipo">
+			<field name="name">equipo.wkf</field>
+			<field name="osv">contenedor</field>
+			<field name="on_create">True</field>
+		</record>
+
+		<record model="workflow.activity" id="act_en_camino">
+			<field name="wkf_id" ref="wkf_equipo"/>
+			<field name="flow_start">True</field>
+			<field name="name">en_camino</field>
+			<field name="kind">function</field>
+			<field name="action">equipo_en_camino()</field>
+		</record>
+		
+		<record model="workflow.activity" id="act_en_puerto">
+			<field name="wkf_id" ref="wkf_equipo" />
+			<field name="name">en_puerto</field>
+			<field name="kind">function</field>
+			<field name="action">equipo_en_puerto()</field>
+		</record>		
+
+		<record model="workflow.activity" id="act_despachado">
+			<field name="wkf_id" ref="wkf_equipo" />
+			<field name="name">despachado</field>
+			<field name="kind">function</field>
+			<field name="action">equipo_despachado()</field>
+		</record>
+		
+		<record model="workflow.activity" id="act_demora">
+			<field name="wkf_id" ref="wkf_equipo" />
+			<field name="name">demora</field>
+			<field name="kind">function</field>
+			<field name="action">equipo_en_demora()</field>
+		</record>		
+
+		<record model="workflow.activity" id="act_devuelto">
+			<field name="wkf_id" ref="wkf_equipo" />
+			<field name="flow_stop">True</field>			
+			<field name="name">devuelto</field>
+			<field name="kind">function</field>
+			<field name="action">equipo_devuelto()</field>
+		</record>
+
+		<record model="workflow.transition" id="trans_en_camino_en_puerto">
+			<field name="act_from" ref="act_en_camino" />
+			<field name="act_to" ref="act_en_puerto" />
+			<field name="signal">equipo_en_puerto</field>
+		</record>		
+		
+		<record model="workflow.transition" id="trans_en_puerto_despachado">
+			<field name="act_from" ref="act_en_puerto" />
+			<field name="act_to" ref="act_despachado" />
+			<field name="signal">equipo_despachado</field>
+		</record>
+
+		<record model="workflow.transition" id="trans_despachado_demora">
+			<field name="act_from" ref="act_despachado" />
+			<field name="act_to" ref="act_demora" />
+			<field name="signal">equipo_en_demora</field>
+		</record>		
+		
+		<record model="workflow.transition" id="trans_demora_devuelto">
+			<field name="act_from" ref="act_demora" />
+			<field name="act_to" ref="act_devuelto" />
+			<field name="signal">equipo_devuelto</field>
+		</record>		
+		
+		<record model="workflow.transition" id="trans_despachado_devuelto">
+			<field name="act_from" ref="act_despachado" />
+			<field name="act_to" ref="act_devuelto" />
+			<field name="signal">equipo_devuelto</field>
+		</record>
+
+	</data>
+</openerp>

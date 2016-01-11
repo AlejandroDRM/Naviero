@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Vista formulario -->
+		<record id='view_buque_form' model='ir.ui.view' >
+			<field name='name'>view.buque.form</field>
+			<field name='model'>buque</field>
+			<field name='arch' type='xml'>
+				<form string='Buque' delete='false'>
+					<sheet>
+						<group col="4">
+<!-- 						<group >
+							<div class="oe_left" >
+								<field name='image' widget="image" class="oe_avatar oe_left" />							
+							</div>	
+						</group> -->
+						<group>
+								<field name='nombre' />
+								<field name='siglas' />
+								<field name='bandera' />
+								<field name='omi' />								
+								<field name='eliminado' groups="naviero.group_naviero_admin"/>									
+<!-- 								<field name='registro_sidunea' /> -->
+							</group>
+						</group>
+						<group col="3" colspan="1" groups="naviero.group_naviero_dpto_documentacion">
+							<button name="eliminar_buque" type="object" string="Eliminar"/>							
+						</group>						
+ 						<notebook>
+							<page string="Viajes">
+								<field name="buque_viaje_id"/>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- Vista arbol -->
+		<record id='view_buque_tree' model='ir.ui.view' >
+			<field name='name'>view.buque.tree</field>
+			<field name='model'>buque</field>
+			<field name='arch' type='xml'>
+				<tree string='Buque' version='7.0' delete='false'> <!--colors='#FF0000:full_view==False'> -->
+					<field name='nombre' />
+					<field name='siglas' />
+					<field name='bandera' />
+					<field name='omi' />						
+				</tree>
+			</field>
+		</record>
+
+		<!-- Vista Kanban-->
+		<record model="ir.ui.view" id="view_buque_kanban">
+            <field name="name">view.buque.kanban</field>
+            <field name="model">buque</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--list of field to be loaded -->
+                    <field name="image" />
+                    <templates>
+						<t t-name="kanban-box">
+                            <div class="oe_product_vignette">
+                                <a type="open">
+                                    <img class="oe_kanban_image"
+                                        t-att-src="kanban_image('buque', 'image', record.id.value)" />
+                                </a>
+                                <div class="oe_kanban_details">
+                                    <h4>
+                                        <a type="edit">
+                                            <field name="nombre"></field>
+                                        </a>
+                                    </h4>
+                                    <ul>
+                                        <li>Siglas: <field name="siglas"></field></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+		
+		<!-- Busqueda -->
+		<record id='view_buque_search' model='ir.ui.view'>
+			<field name='name'>view.buque.search</field>
+			<field name='model'>buque</field>
+			<field name='arch' type='xml'>
+				<search string='Búsqueda Buque' version='7.0'>
+					<field name='nombre' />				
+					<field name='siglas' />
+					<field name='bandera' />
+					<field name='omi' />						
+				</search>
+			</field>
+		</record>
+		
+		<!-- Accion de menu -->
+		<record id='action_buque' model='ir.actions.act_window'>
+            <field name="name">Buques</field>
+            <field name="res_model">buque</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('eliminado','=', False)]</field>				
+            <!-- <field name="search_view_id" ref="view_media_search"/> -->
+		</record>
+		
+			<!-- Accion de menu Administrador-->
+		<record id='action_buque_administrador' model='ir.actions.act_window'>
+            <field name="name">Buques Administrador</field>
+            <field name="res_model">buque</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <!-- <field name="search_view_id" ref="view_media_search"/> -->
+		</record>
+
+		<!-- Menu -->
+		<menuitem name="Naviero" id="menu_naviero_main" sequence="25" />
+			<menuitem name="Buque" id="menu_buque_sub" sequence="1" parent="menu_naviero_main" />
+				<menuitem id="menu_buque" sequence="1"
+						  parent="menu_buque_sub" action="action_buque" groups="naviero.group_naviero_user"/>
+				<menuitem id="menu_buque_administrador" sequence="1"
+						  parent="menu_buque_sub" action="action_buque_administrador" groups="naviero.group_naviero_admin"/>						  
+	</data>
+</openerp>

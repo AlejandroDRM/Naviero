@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Vista formulario -->
+		<record id='view_booking_form' model='ir.ui.view'>
+			<field name='name'>view.booking.form</field>
+			<field name='model'>booking</field>
+			<field name="groups_id" eval="[(6, 0, [ref('group_naviero_dpto_finanzas') ])]"/>			
+			<field name='arch' type='xml'>
+				<form string='booking' version='7.0'>
+					<sheet>
+						<group col="4">
+							<group>
+								<field name='no_booking' />
+								<field name='viaje_id' />
+								<field name='buque' />
+								<field name='cantidad_contenedores' />								
+								<field name='unidad_paquetes' />
+								<field name='cantidad_paquetes' />							
+								<field name='peso_bruto' />										
+								</group>
+							<group>
+								<field name='customers' />									
+								<field name='tipo' />															
+								<field name='naturaleza' />		
+								<field name='descripcion_carga' />										
+								<field name='eliminado' groups="naviero.group_naviero_admin"/>									
+							</group>
+						</group>
+						<group col="3" colspan="1" groups="naviero.group_naviero_dpto_documentacion">
+							<button name="eliminar_booking" type="object" string="Eliminar" />							
+						</group>	
+						<notebook>
+							<page string="Contenedores" >
+								<field name="contenedores_id" />					
+							</page>						
+						</notebook>						
+					</sheet>
+				    <div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+						<field name="message_ids" widget="mail_thread"/>
+					</div>					
+				</form>
+			</field>
+		</record>
+
+		<!-- Ejemplo de vista arbol -->
+		<record id='view_booking_tree' model='ir.ui.view'>
+			<field name='name'>view.booking.tree</field>
+			<field name='model'>booking</field>
+			<field name='arch' type='xml'>
+				<tree string='booking' version='7.0' > 
+					<field name='no_booking' />
+					<field name='buque' />															
+					<field name='viaje_id' />							
+					<field name='cantidad_contenedores' />								
+					<field name='unidad_paquetes' />
+					<field name='cantidad_paquetes' />							
+					<field name='peso_bruto' />	
+					<field name='customers' />									
+					<field name='descripcion_carga' />										
+				</tree>
+			</field>
+		</record>
+
+		<!-- Busqueda -->
+		<record id='view_booking_search' model='ir.ui.view'>
+			<field name='name'>view.booking.search</field>
+			<field name='model'>booking</field>
+			<field name='arch' type='xml'>
+				<search string='Búsqueda booking' version='7.0'>
+					<field name='no_booking' />
+					<field name='cantidad_contenedores' />								
+					<field name='unidad_paquetes' />
+					<field name='cantidad_paquetes' />							
+					<field name='peso_bruto' />	
+					<field name='customers' />			
+					<field name='viaje_id' />
+					<field name='buque' />
+				</search>
+			</field>
+		</record>
+		
+		<!-- Accion de menu -->
+		<record id='action_booking' model='ir.actions.act_window'>
+            <field name="name">Booking</field>
+            <field name="res_model">booking</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('eliminado','=',False)]</field>
+		</record>
+		
+		<!-- Accion de menu administrador -->
+		<record id='action_booking_administrador' model='ir.actions.act_window'>
+            <field name="name">Booking Administrador</field>
+            <field name="res_model">booking</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <!-- <field name="search_view_id" ref="view_media_search"/> -->
+		</record>		
+
+		<!-- Creacion de menus -->
+		<menuitem name="Bookings" id="menu_booking_sub" sequence="1" parent="menu_naviero_main" />
+			<menuitem id="menu_booking" sequence="1"
+					  parent="menu_booking_sub" action="action_booking" groups="naviero.group_naviero_user" />
+			<menuitem id="menu_booking_administrador" sequence="1"
+					  parent="menu_booking_sub" action="action_booking_administrador"  groups="naviero.group_naviero_admin"/>					  
+	</data>
+</openerp>

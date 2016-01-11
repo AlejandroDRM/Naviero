@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data >
+	    <record id="bls" model="ir.exports">
+		    <field name="name">Reporte General BLS</field>
+		    <field name="resource">bl</field>
+	    </record>
+	    
+	    <record id="campos_bls_numero" model="ir.exports.line">
+		    <field name="name">no_bl</field>
+		    <field name="export_id" ref="bls"></field>
+		    <field name="sequence">0</field>
+		    <field name="heading">Número</field>
+	    </record>
+	    
+	    <record id="campos_bls_registro_sidunea" model="ir.exports.line">
+		    <field name="name">registro_sidunea</field>
+		    <field name="export_id" ref="bls"></field>
+		    <field name="sequence">1</field>
+		    <field name="heading">Registro Sidunea</field>
+	    </record>
+
+	    <record id="campos_bls_nombre_beneficiario" model="ir.exports.line">
+		    <field name="name">customers/nombre</field>
+		    <field name="export_id" ref="bls"></field>
+		    <field name="sequence">2</field>
+		    <field name="heading">Beneficiario/Nombre</field>
+	    </record>
+    </data>
+</openerp>

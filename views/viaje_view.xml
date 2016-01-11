@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Vista formulario -->
+		<record id='view_viaje_form' model='ir.ui.view'>
+			<field name='name'>view.viaje.form</field>
+			<field name='model'>viaje</field>
+			<field name="groups_id" eval="[(6, 0, [ref('group_naviero_dpto_finanzas') ])]"/>			
+			<field name='arch' type='xml'>
+				<form string='Viaje' version='7.0'>
+					<sheet>
+						<group col="4">
+							<group>
+								<field name='numero' />			
+								<field name='buque_id' />									
+								<field name='codigo' />
+								<field name='fecha_salida' />										
+								<field name='fecha_llegada' />								
+								<field name='fecha_inicio_operaciones' />
+								<!-- <field name='fecha_trasbordo' />							 -->
+								<field name='cantidad_bls' />
+								<field name='cantidad_bultos' />							
+								<field name='cantidad_contenedores' />								
+								</group>
+							<group>
+								<field name='registro_sidunea' />											
+								<field name='linea' />		
+								<field name='ruta' />										
+								<field name='puerto_origen' />
+								<field name='puerto_arribo' />
+								<field name='peso_bruto' />
+								<field name='peso_neto' />
+								<field name='peso_bruto_total' />
+								<field name='fecha_regreso' />
+								<field name='puerto_regreso' />
+								<field name='fecha_fin_operaciones' />
+								<field name='eliminado' groups="naviero.group_naviero_admin"/>									
+							</group>
+						</group>
+						<group col="3" colspan="1" groups="naviero.group_naviero_dpto_documentacion">
+							<button name="notificar_consignatarios" type="object" string="Notificar Consignatarios" />							
+						</group>						
+<!-- 						<group col="3" colspan="1" groups="naviero.group_naviero_dpto_documentacion">
+							<button name="eliminar_viaje" type="object" string="Eliminar" />							
+						</group>	 -->					
+						<notebook>
+							<page string="Bill Of Ladings" groups="naviero.group_naviero_dpto_documentacion">
+								<field name="bls_id" />							
+							</page>
+							<page string="Contenedores Descarga">
+								<field name="contenedores_id" />							
+							</page>
+							<page string="Contenedores Embarque" >
+								<field name="contenedores_id_salida" />					
+							</page>
+							<page string="Servicios" groups="naviero.group_naviero_dpto_administracion,naviero.group_naviero_dpto_finanzas">
+								<field name="servicios_id" />														
+							</page>							
+						</notebook>
+					</sheet>
+				    <div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+						<field name="message_ids" widget="mail_thread"/>
+					</div>					
+				</form>
+			</field>
+		</record>
+
+		<!-- Ejemplo de vista arbol -->
+		<record id='view_viaje_tree' model='ir.ui.view'>
+			<field name='name'>view.viaje.tree</field>
+			<field name='model'>viaje</field>
+			<field name='arch' type='xml'>
+				<tree string='Viaje' version='7.0' > 
+					<field name='numero' />
+					<field name='buque_id' />
+					<field name='puerto_arribo' />
+					<field name='codigo' />
+					<field name='fecha_salida' />										
+					<field name='fecha_llegada' />								
+					<field name='fecha_inicio_operaciones' />
+					<field name='fecha_regreso' />					
+				</tree>
+			</field>
+		</record>
+
+		<!-- Busqueda -->
+		<record id='view_viaje_search' model='ir.ui.view'>
+			<field name='name'>view.viaje.search</field>
+			<field name='model'>viaje</field>
+			<field name='arch' type='xml'>
+				<search string='Búsqueda Viaje' version='7.0'>
+					<field name='numero' />				
+					<field name='buque_id' />
+					<field name='linea' />
+					<field name='ruta' />		
+					<field name='puerto_origen' />
+					<field name='puerto_arribo' />
+					<field name='fecha_llegada' />		
+					<field name='fecha_inicio_operaciones' />
+					<!-- <field name='fecha_trasbordo' />					 -->
+					<field name='fecha_salida' />		
+					<field name='fecha_fin_operaciones' />					
+				</search>
+			</field>
+		</record>
+		
+		<!-- Accion de menu -->
+		<record id='action_viaje' model='ir.actions.act_window'>
+            <field name="name">Viajes</field>
+            <field name="res_model">viaje</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('eliminado','=',False)]</field>
+		</record>
+		
+		<!-- Accion de menu administrador -->
+		<record id='action_viaje_administrador' model='ir.actions.act_window'>
+            <field name="name">Viajes Administrador</field>
+            <field name="res_model">viaje</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+		</record>		
+
+		<!-- Creacion de menus -->
+		<menuitem name="Viaje" id="menu_viaje_sub" sequence="1" parent="menu_naviero_main" />
+			<menuitem id="menu_viaje" sequence="1"
+					  parent="menu_viaje_sub" action="action_viaje" groups="naviero.group_naviero_user" />
+			<menuitem id="menu_viaje_administrador" sequence="1"
+					  parent="menu_viaje_sub" action="action_viaje_administrador"  groups="naviero.group_naviero_admin"/>					  
+	</data>
+</openerp>

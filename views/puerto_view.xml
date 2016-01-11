@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Vista formulario -->
+		<record id='view_puerto_form' model='ir.ui.view'>
+			<field name='name'>view.puerto.form</field>
+			<field name='model'>puerto</field>
+			<field name='arch' type='xml'>
+				<form string='Puerto' version='7.0'>
+					<sheet>
+						<group col="4">
+							<group>
+								<field name='codigo' />
+								<field name='descripcion' />
+								<field name='direccion' />
+							</group>
+							<group>
+<!-- 								<field name='capitania' /> -->
+								<field name='correo' />
+								<field name='eliminado' groups="naviero.group_naviero_admin"/>								
+							</group>
+						</group>
+						<group col="3" colspan="1" groups="naviero.group_naviero_dpto_documentacion">
+							<button name="eliminar_puerto" type="object" string="Eliminar" />							
+						</group>
+						<notebook>
+							<page string="Patios" >
+								<field name="puertos" />							
+							</page>
+						</notebook>						
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- Ejemplo de vista arbol -->
+		<record id='view_puerto_tree' model='ir.ui.view'>
+			<field name='name'>view.puerto.tree</field>
+			<field name='model'>puerto</field>
+			<field name='arch' type='xml'>
+				<tree string='Puerto' version='7.0' > <!--colors='#FF0000:full_view==False'> -->
+					<field name='codigo' />
+					<field name='descripcion' />
+					<field name='direccion' />
+<!-- 					<field name='capitania' /> -->
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Busqueda -->
+		<record id='view_puerto_search' model='ir.ui.view'>
+			<field name='name'>view.puerto.search</field>
+			<field name='model'>puerto</field>
+			<field name='arch' type='xml'>
+				<search string='Búsqueda Puerto' version='7.0'>
+					<field name='codigo' />
+					<field name='descripcion' />
+					<field name='direccion' />
+<!-- 					<field name='capitania' /> -->
+					<field name='correo'/>
+				</search>
+			</field>
+		</record>
+
+		<!-- Accion de menu -->
+		<record id='action_puerto' model='ir.actions.act_window'>
+            <field name="name">Puertos</field>
+            <field name="res_model">puerto</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('eliminado','=',False)]</field>
+		</record>
+		
+		<!-- Accion de menu administrador -->
+		<record id='action_puerto_administrador' model='ir.actions.act_window'>
+            <field name="name">Puertos Administrador</field>
+            <field name="res_model">puerto</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+		</record>		
+
+		<!-- Ejemplo de creacion de menus -->
+		<menuitem name="Puerto" id="menu_puerto_sub" sequence="1" parent="menu_naviero_main" groups="naviero.group_naviero_dpto_documentacion"/>
+			<menuitem id="menu_puerto" sequence="1"
+					  parent="menu_puerto_sub" action="action_puerto"  groups="naviero.group_naviero_user"/>
+			<menuitem id="menu_puerto_administrador" sequence="1"
+					  parent="menu_puerto_sub" action="action_puerto_administrador"  groups="naviero.group_naviero_admin"/>					  
+	</data>
+</openerp>

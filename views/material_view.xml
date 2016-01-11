@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Vista formulario -->
+		<record id='view_material_form' model='ir.ui.view'>
+			<field name='name'>view.viaje.form</field>
+			<field name='model'>material</field>
+			<field name='arch' type='xml'>
+				<form string='Material' version='7.0'>
+					<sheet>
+						<group col="4">
+							<group>
+								<field name='codigo' />
+								<field name='descripcion' />
+								<field name='hoja_seguridad' />								
+								<field name='eliminado' groups="naviero.group_naviero_admin"/>								
+							</group>
+						</group>
+						<group col="3" colspan="1" >
+							<button name="eliminar_material" type="object" string="Eliminar"  groups="naviero.group_naviero_dpto_documentacion"/>							
+						</group>	
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- Ejemplo de vista arbol -->
+		<record id='view_material_tree' model='ir.ui.view'>
+			<field name='name'>view.material.tree</field>
+			<field name='model'>material</field>
+			<field name='arch' type='xml'>
+				<tree string='Material' version='7.0' > <!--colors='#FF0000:full_view==False'> -->
+					<field name='codigo' />
+					<field name='descripcion' />
+					<field name='hoja_seguridad' />	
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Busqueda -->
+		<record id='view_material_search' model='ir.ui.view'>
+			<field name='name'>view.material.search</field>
+			<field name='model'>material</field>
+			<field name='arch' type='xml'>
+				<search string='Búsqueda Material' version='7.0'>
+					<field name='codigo' />
+					<field name='descripcion' />
+					<field name='hoja_seguridad' />	
+				</search>
+			</field>
+		</record>
+
+		<!-- Ejemplo de accion de menu -->
+		<record id='action_material' model='ir.actions.act_window'>
+            <field name="name">Materiales</field>
+            <field name="res_model">material</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('eliminado','=',False)]</field>				
+		</record>
+
+		<!-- Accion de menu administrador -->
+		<record id='action_material_administrador' model='ir.actions.act_window'>
+            <field name="name">Materiales Administrador</field>
+            <field name="res_model">material</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+		</record>
+		
+		<!-- Ejemplo de creacion de menus -->
+			<menuitem name="Material" id="menu_material_sub" sequence="1" parent="menu_naviero_main" groups="naviero.group_naviero_dpto_documentacion"/>
+				<menuitem id="menu_material" sequence="1"
+						  parent="menu_material_sub" action="action_material" groups="naviero.group_naviero_user" />
+				<menuitem id="menu_material_administrador" sequence="1"
+						  parent="menu_material_sub" action="action_material_administrador" groups="naviero.group_naviero_admin" />						  
+	</data>
+</openerp>

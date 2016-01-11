@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Vista formulario -->
+		<record id='view_linea_form' model='ir.ui.view'>
+			<field name='name'>view.linea.form</field>
+			<field name='model'>linea</field>
+			<field name='arch' type='xml'>
+				<form string='Linea' version='7.0'>
+					<sheet>
+						<group col="4">
+							<group>
+								<field name='codigo'/>
+								<field name='descripcion'/>
+								<field name='eliminado' groups="naviero.group_naviero_admin"/>									
+							</group>
+						</group>
+						<group col="3" colspan="1" >
+							<button name="eliminar_linea" type="object" string="Eliminar"  groups="naviero.group_naviero_dpto_documentacion"/>							
+						</group>	
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- Ejemplo de vista arbol -->
+		<record id='view_linea_tree' model='ir.ui.view'>
+			<field name='name'>view.linea.tree</field>
+			<field name='model'>linea</field>
+			<field name='arch' type='xml'>
+				<tree string='Linea' version='7.0' > 
+					<field name='codigo' />
+					<field name='descripcion' />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Busqueda -->
+		<record id='view_linea_search' model='ir.ui.view'>
+			<field name='name'>view.linea.search</field>
+			<field name='model'>linea</field>
+			<field name='arch' type='xml'>
+				<search string='Búsqueda Línea' version='7.0'>
+					<field name='codigo' />
+					<field name='descripcion' />
+				</search>
+			</field>
+		</record>		
+		
+		<!-- Ejemplo de accion de menu -->
+		<record id='action_linea' model='ir.actions.act_window'>
+            <field name="name">Líneas</field>
+            <field name="res_model">linea</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('eliminado','=',False)]</field>				
+		</record>
+		
+		<!-- Accion de menu administrador -->
+		<record id='action_linea_administrador' model='ir.actions.act_window'>
+            <field name="name">Líneas Administrador</field>
+            <field name="res_model">linea</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+		</record>		
+
+		<!-- Ejemplo de creacion de menus -->
+			<menuitem name="Línea" id="menu_linea_sub" sequence="1" parent="menu_naviero_main" groups="naviero.group_naviero_dpto_documentacion"/>
+				<menuitem id="menu_linea" sequence="1"
+						  parent="menu_linea_sub" action="action_linea" groups="naviero.group_naviero_user"/>
+				<menuitem id="menu_linea_administrador" sequence="1"
+						  parent="menu_linea_sub" action="action_linea_administrador" groups="naviero.group_naviero_admin"/>						  
+	</data>
+</openerp>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Vista formulario -->
+		<record id='view_patio_form' model='ir.ui.view'>
+			<field name='name'>view.patio.form</field>
+			<field name='model'>patio</field>
+			<field name='arch' type='xml'>
+				<form string='Patio' version='7.0'>
+					<sheet>
+						<group col="4">
+							<group>
+								<field name='codigo'/>
+								<field name='descripcion'/>
+								<field name='puerto_id'/>
+								<field name='eliminado' groups="naviero.group_naviero_admin"/>									
+							</group>
+						</group>
+						<group col="3" colspan="1" groups="naviero.group_naviero_dpto_documentacion">
+							<button name="eliminar_patio" type="object" string="Eliminar" />							
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- Ejemplo de vista arbol -->
+		<record id='view_patio_tree' model='ir.ui.view'>
+			<field name='name'>view.patio.tree</field>
+			<field name='model'>patio</field>
+			<field name='arch' type='xml'>
+				<tree string='Patio' version='7.0' > <!--colors='#FF0000:full_view==False'> -->
+					<field name='codigo' />
+					<field name='descripcion'/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Busqueda -->
+		<record id='view_patio_search' model='ir.ui.view'>
+			<field name='name'>view.patio.search</field>
+			<field name='model'>patio</field>
+			<field name='arch' type='xml'>
+				<search string='Búsqueda Patio' version='7.0'>
+					<field name='codigo' />				
+					<field name='descripcion' />
+				</search>
+			</field>
+		</record>
+
+		<!-- Ejemplo de accion de menu -->
+		<record id='action_patio' model='ir.actions.act_window'>
+            <field name="name">Patios</field>
+            <field name="res_model">patio</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('eliminado','=',False)]</field>				
+		</record>
+		
+		<!-- Accion de menu administrador-->
+		<record id='action_patio_administrador' model='ir.actions.act_window'>
+            <field name="name">Patios Administrador</field>
+            <field name="res_model">patio</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+		</record>		
+
+		<!-- Ejemplo de creacion de menus -->
+			<menuitem name="Patio" id="menu_patio_sub" sequence="1" parent="menu_naviero_main" groups="naviero.group_naviero_dpto_documentacion" />
+				<menuitem id="menu_patio" sequence="1"
+						  parent="menu_patio_sub" action="action_patio" groups="naviero.group_naviero_user"/>
+				<menuitem id="menu_patio_administrador" sequence="1"
+						  parent="menu_patio_sub" action="action_patio_administrador" groups="naviero.group_naviero_admin" />						  
+	</data>
+</openerp>
